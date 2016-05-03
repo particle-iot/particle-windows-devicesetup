@@ -1,0 +1,115 @@
+﻿<local:SoftAPPage
+    x:Class="Particle.Setup.Pages.SoftAPConfigurePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Particle.Setup.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <local:SoftAPPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionaries/ColorDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </local:SoftAPPage.Resources>
+    
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/SoftAP/Background.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding StatusBarHeight}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="{Binding NavigationBarHeight}" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
+                <Image Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Logo.png" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".05*" />
+                    <ColumnDefinition Width=".90*" />
+                    <ColumnDefinition Width=".05*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".17*" />
+                        <RowDefinition Height=".03*" />
+                        <RowDefinition Height=".77*" />
+                        <RowDefinition Height=".03*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" VerticalAlignment="Bottom">
+                        <TextBlock x:Uid="YourDeviceIsConnectingTo" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextAlignment="Center" Text="[Your Particle device is connecting to:]" />
+                        <TextBlock x:Name="WiFiName" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextAlignment="Center" FontWeight="Bold" Text="[WiFi Access Point]" />
+                        <TextBlock x:Uid="ThisCanTakeAMinute" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextAlignment="Center" Text="[This can take about a minute.]" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2">
+                        <Grid x:Name="Step1Grid" Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".2*" />
+                                <ColumnDefinition Width=".8*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <ProgressRing x:Name="Step1ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
+                                <Image x:Name="Step1Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                            </Grid>
+                            <TextBlock x:Uid="SoftAPConfigureStep1" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Configure device Wi-Fi credentials]" />
+                        </Grid>
+                        <Grid x:Name="Step2Grid" Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".2*" />
+                                <ColumnDefinition Width=".8*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <ProgressRing x:Name="Step2ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
+                                <Image x:Name="Step2Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                            </Grid>
+                            <TextBlock x:Uid="SoftAPConfigureStep2" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Connect to Wi-Fi network]" />
+                        </Grid>
+                        <Grid x:Name="Step3Grid" Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".2*" />
+                                <ColumnDefinition Width=".8*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <ProgressRing x:Name="Step3ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
+                                <Image x:Name="Step3Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                            </Grid>
+                            <TextBlock x:Uid="SoftAPConfigureStep3" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Wait for device cloud connection]" />
+                        </Grid>
+                        <Grid x:Name="Step4Grid" Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".2*" />
+                                <ColumnDefinition Width=".8*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <ProgressRing x:Name="Step4ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
+                                <Image x:Name="Step4Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                            </Grid>
+                            <TextBlock x:Uid="SoftAPConfigureStep4" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Check for internet connectivity]" />
+                        </Grid>
+                        <Grid x:Name="Step5Grid" Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".2*" />
+                                <ColumnDefinition Width=".8*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <ProgressRing x:Name="Step5ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
+                                <Image x:Name="Step5Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                            </Grid>
+                            <TextBlock x:Uid="SoftAPConfigureStep5" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Verify product ownership]" />
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:SoftAPPage>

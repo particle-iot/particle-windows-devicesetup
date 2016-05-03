@@ -1,0 +1,8 @@
+﻿<Setup:SoftAPScanAPCollection xmlns:Setup="using:Particle.Setup.Models">
+    <Setup:SoftAPScanAP Channel="11" MaximumDataRate="216700" RSSI="-40" Security="SecurityOpen" SSID="Access Point 1 Open"/>
+    <Setup:SoftAPScanAP Channel="11" MaximumDataRate="216700" RSSI="-50" Security="SecurityWpa2AesPsk" SSID="Access Point 2 Secure"/>
+    <Setup:SoftAPScanAP Channel="11" MaximumDataRate="216700" RSSI="-60" Security="SecurityWpa2AesPsk" SSID="Access Point 3 Secure"/>
+    <Setup:SoftAPScanAP Channel="11" MaximumDataRate="216700" RSSI="-70" Security="SecurityWpa2AesPsk" SSID="Access Point 4 Secure"/>
+    <Setup:SoftAPScanAP Channel="11" MaximumDataRate="216700" RSSI="-80" Security="SecurityWpa2AesPsk" SSID="Access Point 5 Secure"/>
+    <Setup:SoftAPScanAP Channel="11" MaximumDataRate="216700" RSSI="-90" Security="SecurityWpa2AesPsk" SSID="Access Point 6 Secure"/>
+</Setup:SoftAPScanAPCollection>

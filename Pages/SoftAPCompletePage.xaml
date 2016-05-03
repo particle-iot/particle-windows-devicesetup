@@ -1,0 +1,75 @@
+﻿<local:SoftAPPage
+    x:Class="Particle.Setup.Pages.SoftAPCompletePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Particle.Setup.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <local:SoftAPPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionaries/ButtonDictionary.xaml" />
+                <ResourceDictionary Source="/Dictionaries/ColorDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </local:SoftAPPage.Resources>
+    
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/SoftAP/Background.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding StatusBarHeight}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="{Binding NavigationBarHeight}" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
+                <Image Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Logo.png" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".05*" />
+                    <ColumnDefinition Width=".90*" />
+                    <ColumnDefinition Width=".05*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".03*" />
+                        <RowDefinition Height=".17*" />
+                        <RowDefinition Height=".60*" />
+                        <RowDefinition Height=".17*" />
+                        <RowDefinition Height=".03*" />
+                    </Grid.RowDefinitions>
+                    <Image x:Name="ResultImage" Grid.Row="1" Source="ms-appx:///Particle.Setup/Assets/SoftAP/StatusIcons/StatusIconSuccess.png" />
+                    <StackPanel Grid.Row="2">
+                        <TextBlock x:Name="ResultHeader" Margin="0,20" HorizontalAlignment="Center" Style="{StaticResource SubheaderTextBlockStyle}" TextAlignment="Center" Text="[Result status]" />
+                        <TextBlock x:Name="ResultText" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[Result text here]" />
+                        <StackPanel x:Name="NameNewDevicePanel" Visibility="Collapsed" >
+                            <TextBlock x:Uid="NameNewDevice" Margin="0,20,0,0" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[Name your new device]" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".90*" />
+                                    <ColumnDefinition Width=".10*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox x:Name="NewDeviceNameTextBox" x:Uid="NewDeviceNamePlaceholder" PlaceholderText="[awesome_device]" />
+                                <Button x:Name="RefreshButton" Grid.Column="1" MinWidth="0" Margin="10,0,0,0" HorizontalAlignment="Center" Template="{StaticResource RefreshButton}" Click="RefreshButton_Click" />
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" VerticalAlignment="Bottom">
+                        <Button x:Name="DoneButton" x:Uid="ButtonDone" HorizontalAlignment="Stretch" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[DONE]" Click="DoneButton_Click" />
+                    </StackPanel>
+                    <ProgressBar x:Name="ProgressBar" Grid.Row="4" VerticalAlignment="Center" Background="Transparent" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:SoftAPPage>

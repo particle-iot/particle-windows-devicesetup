@@ -1,0 +1,98 @@
+﻿<local:SoftAPPage
+    x:Class="Particle.Setup.Pages.SoftAPSelectWiFiPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Particle.Setup.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Particle.UI.Controls"
+    xmlns:converters="using:Particle.UI.Converters"
+    mc:Ignorable="d">
+
+    <local:SoftAPPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionaries/ColorDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:RssiToImageConverter x:Key="RssiToImageConverter" />
+        </ResourceDictionary>
+    </local:SoftAPPage.Resources>
+
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/SoftAP/Background.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding StatusBarHeight}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="{Binding NavigationBarHeight}" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
+                <Image Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Logo.png" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".17*" />
+                    <RowDefinition Height=".03*" />
+                    <RowDefinition Height=".60*" />
+                    <RowDefinition Height=".17*" />
+                    <RowDefinition Height=".03*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".05*" />
+                        <ColumnDefinition Width=".90*" />
+                        <ColumnDefinition Width=".05*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Uid="SelectYourWifi" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource SubheaderTextBlockStyle}" TextAlignment="Center" Text="[Select your Wi-Fi network]" />
+                </Grid>
+                <ProgressRing x:Name="LoadWiFiProgress" Grid.Column="1" Grid.Row="2" Background="Transparent" Foreground="White" />
+                <controls:AlternatingRowListView x:Name="PhotonWiFiListBox" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" OddRowBackground="{StaticResource HeaderTransparency}" ItemsSource="{Binding}" IsItemClickEnabled="True" ItemClick="PhotonWiFiListBox_ItemClick" d:DataContext="{d:DesignData Source=/DesignData/ScanAPCollectionSampleData.xaml}">
+                    <controls:AlternatingRowListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </controls:AlternatingRowListView.ItemContainerStyle>
+                    <controls:AlternatingRowListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".05*" />
+                                    <ColumnDefinition Width=".80*" />
+                                    <ColumnDefinition Width=".10*" />
+                                    <ColumnDefinition Width=".05*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="1" Margin="0,10" Style="{StaticResource BaseTextBlockStyle}" Text="{Binding SSID}" />
+                                <Image Grid.Column="2" MaxHeight="25" HorizontalAlignment="Right" Source="{Binding Converter={StaticResource RssiToImageConverter}}" />
+                            </Grid>
+                        </DataTemplate>
+                    </controls:AlternatingRowListView.ItemTemplate>
+                </controls:AlternatingRowListView>
+                <Grid Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".05*" />
+                        <ColumnDefinition Width=".90*" />
+                        <ColumnDefinition Width=".05*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1">
+                        <HyperlinkButton HorizontalAlignment="Center" FontSize="20" Click="ManualButton_Click">
+                            <TextBlock>
+                                <Underline>
+                                    <Run x:Uid="NetworkNotListed" Text="[My network is not listed]" />
+                                </Underline>
+                            </TextBlock>
+                        </HyperlinkButton>
+                        <Button x:Uid="ButtonRescan" HorizontalAlignment="Stretch" VerticalAlignment="Top" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[RESCAN]" Click="RescanButton_Click" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:SoftAPPage>

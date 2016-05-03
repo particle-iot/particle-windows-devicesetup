@@ -1,0 +1,114 @@
+﻿<local:SoftAPPage
+    x:Class="Particle.Setup.Pages.SoftAPConnectPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Particle.Setup.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <local:SoftAPPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionaries/ColorDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </local:SoftAPPage.Resources>
+    
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/SoftAP/Background.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding StatusBarHeight}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="{Binding NavigationBarHeight}" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
+                <Image Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Logo.png" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".05*" />
+                    <ColumnDefinition Width=".90*" />
+                    <ColumnDefinition Width=".05*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".03*" />
+                        <RowDefinition Height=".17*" />
+                        <RowDefinition Height=".20*" />
+                        <RowDefinition Height=".20*" />
+                        <RowDefinition Height=".20*" />
+                        <RowDefinition Height=".17*" />
+                        <RowDefinition Height=".03*" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="1" Source="ms-appx:///Particle.Setup/Assets/SoftAP/ConnectToWiFi.png" />
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".09*" />
+                            <ColumnDefinition Width=".04*" />
+                            <ColumnDefinition Width=".87*" />
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0">
+                            <Grid Width="30" Height="30">
+                                <Ellipse Width="30" Height="30" Fill="White" />
+                                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource Cyan}" FontSize="16" Text="1" />
+                            </Grid>
+                        </Viewbox>
+                        <TextBlock x:Uid="SoftAPConnectStep1" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[Tap Start > Settings > Wi-Fi]" />
+                    </Grid>
+                    <StackPanel Grid.Row="3" VerticalAlignment="Center">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".09*" />
+                                <ColumnDefinition Width=".04*" />
+                                <ColumnDefinition Width=".87*" />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Grid.Column="0">
+                                <Grid Width="30" Height="30">
+                                    <Ellipse Width="30" Height="30" Fill="White" />
+                                    <TextBlock TextAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource Cyan}" FontSize="16" Text="2" />
+                                </Grid>
+                            </Viewbox>
+                            <TextBlock x:Uid="SoftAPConnectStep2" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[Make sure Wi-Fi is turned on, and choose the network below:]" />
+                        </Grid>
+                        <Grid Margin="0,10,0,0" Background="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" MaxHeight="25" Margin="10,5" Source="ms-appx:///Particle.Setup/Assets/SoftAP/WiFiSignal/WifiSignalBlack4.png" />
+                            <TextBlock x:Name="PhotonNetworkTextBlock" Grid.Column="1" VerticalAlignment="Center" Foreground="Black" Style="{StaticResource BaseTextBlockStyle}" Text="Photon-XXXX" />
+                        </Grid>
+                        <TextBlock x:Uid="SoftAPConnectStep2Note" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="[XXXX will be a unique 4-digit code]" />
+                    </StackPanel>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".09*" />
+                            <ColumnDefinition Width=".04*" />
+                            <ColumnDefinition Width=".87*" />
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0">
+                            <Grid Width="30" Height="30">
+                                <Ellipse Width="30" Height="30" Fill="White" />
+                                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource Cyan}" FontSize="16" Text="3" />
+                            </Grid>
+                        </Viewbox>
+                        <TextBlock x:Uid="SoftAPConnectStep3" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[Once connected, return to this app]" />
+                    </Grid>
+                    <StackPanel Grid.Row="5" VerticalAlignment="Bottom">
+                        <Button x:Uid="ButtonOpenWiFi" HorizontalAlignment="Stretch" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[OPEN WIFI]" Click="OpenWiFiButton_Click" />
+                    </StackPanel>
+                    <ProgressBar x:Name="ProgressBar" Grid.Row="6" VerticalAlignment="Center" Background="Transparent" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:SoftAPPage>

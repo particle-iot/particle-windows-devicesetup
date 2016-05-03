@@ -1,0 +1,104 @@
+﻿<local:SoftAPPage
+    x:Class="Particle.Setup.Pages.SoftAPStartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Particle.Setup.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <local:SoftAPPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionaries/ColorDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </local:SoftAPPage.Resources>
+    
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/SoftAP/Background.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding StatusBarHeight}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="{Binding NavigationBarHeight}" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
+                <Image Grid.Row="1" Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Logo.png" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".05*" />
+                    <ColumnDefinition Width=".90*" />
+                    <ColumnDefinition Width=".05*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".03*" />
+                        <RowDefinition Height=".17*" />
+                        <RowDefinition Height=".20*" />
+                        <RowDefinition Height=".20*" />
+                        <RowDefinition Height=".20*" />
+                        <RowDefinition Height=".17*" />
+                        <RowDefinition Height=".03*" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="1" Source="ms-appx:///Particle.Setup/Assets/SoftAP/ConnectToPower.png" />
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".09*" />
+                            <ColumnDefinition Width=".04*" />
+                            <ColumnDefinition Width=".87*" />
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0">
+                            <Grid Width="30" Height="30">
+                                <Ellipse Width="30" Height="30" Fill="White" />
+                                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource Cyan}" FontSize="16" Text="1" />
+                            </Grid>
+                        </Viewbox>
+                        <TextBlock x:Uid="SoftAPStartStep1" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[Plug in your Particle device to power it on]" />
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".09*" />
+                            <ColumnDefinition Width=".04*" />
+                            <ColumnDefinition Width=".87*" />
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0">
+                            <Grid Width="30" Height="30">
+                                <Ellipse Width="30" Height="30" Fill="White" />
+                                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource Cyan}" FontSize="16" Text="2" />
+                            </Grid>
+                        </Viewbox>
+                        <TextBlock x:Uid="SoftAPStartStep2" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[The on-board LED should be blinking blue. If not, hold the mode button for 3 seconds]" />
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".09*" />
+                            <ColumnDefinition Width=".04*" />
+                            <ColumnDefinition Width=".87*" />
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0">
+                            <Grid Width="30" Height="30">
+                                <Ellipse Width="30" Height="30" Fill="White" />
+                                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource Cyan}" FontSize="16" Text="3" />
+                            </Grid>
+                        </Viewbox>
+                        <TextBlock x:Uid="SoftAPStartStep3" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[Make sure this device is connected to the internet]" />
+                    </Grid>
+                    <StackPanel Grid.Row="5" VerticalAlignment="Bottom">
+                        <TextBlock x:Name="Username" HorizontalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[email@particle.io]" />
+                        <Button x:Name="ReadyButton" x:Uid="ButtonReady" HorizontalAlignment="Stretch" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[READY]" Click="ReadyButton_Click" />
+                    </StackPanel>
+                    <ProgressBar x:Name="ProgressBar" Grid.Row="6" VerticalAlignment="Center" Background="Transparent" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:SoftAPPage>
