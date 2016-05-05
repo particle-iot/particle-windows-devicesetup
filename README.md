@@ -24,7 +24,9 @@ This Library is still under development and is currently released as Alpha and o
 Due to limitations on how string resources are handled in a PCL (Portable Class Library) you will need to inject the resources from the setup library into your app:
 
 ```cs
-UI.WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(typeof(Particle.Setup.SetupResources));
+UI.WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(
+  typeof(Particle.Setup.SetupResources)
+);
 ```
 
 You can either do this on app startup, or before you start the soft AP process.
@@ -155,8 +157,9 @@ You can either [download Particle Device Setup library](https://github.com/spark
 ## Communication
 
 - If you **need help**, use [Our community website](http://community.particle.io), use the `Mobile` category for dicussion/troubleshooting Windows apps using the Particle Windows Cloud SDK.
-- If you are certain you **found a bug**, _and can provide steps to reliably reproduce it_, open an issue, label it as `bug`.
-- If you **have a feature request**, open an issue with an `enhancement` label on it
+
+- If you are certain you **found a bug**, _and can provide steps to reliably reproduce it_, [open an issue on GitHub](https://github.com/spark/particle-windows-devicesetup/labels/bug).
+- If you **have a feature request**, [open an issue on GitHub](https://github.com/spark/particle-windows-devicesetup/labels/enhancement).
 - If you **want to contribute**, submit a pull request, be sure to check out spark.github.io for our contribution guidelines, and please sign the [CLA](https://docs.google.com/a/particle.io/forms/d/1_2P-vRKGUFg5bmpcKLHO_qNZWGi5HKYnfrrkd-sbZoA/viewform).
 
 ## Maintainers
@@ -166,4 +169,4 @@ You can either [download Particle Device Setup library](https://github.com/spark
 
 ## License
 
-Particle Device Setup library is available under the Apache License 2.0. See the LICENSE file for more info.
+Particle Device Setup library is available under the Apache License 2.0. See the [LICENSE file](https://github.com/spark/particle-windows-devicesetup/blob/master/LICENSE) for more info.
