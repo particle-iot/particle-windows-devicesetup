@@ -23,40 +23,12 @@ This Library is still under development and is currently released as Alpha and o
 
 Due to limitations on how string resources are handled in a PCL (Portable Class Library) you will need to inject the resources from the setup library into your app:
 
+You can either do this on app startup, or before you start the soft AP process.
+
 ```cs
 UI.WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(
   typeof(Particle.Setup.SetupResources)
 );
-```
-
-You can either do this on app startup, or before you start the soft AP process.
-
-If you are developing an application for Windows Phone, you will need to handle the hardware back buttons.
-
-Define BackPressed EventHandler:
-
-```cs
-void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
-{
-  if (SoftAP.SoftAPResult.Result != SoftAPSetupResult.Started)
-  {
-    HardwareButtons.BackPressed -= hardwareButtonsBackPressed;
-    if (SoftAP.SoftAPResult.Result != SoftAPSetupResult.NotStarted)
-      return;
-  }
-  
-  if (Frame.CanGoBack)
-  {
-    e.Handled = true;
-    Frame.GoBack();
-  }
-}
-```
-
-and before calling `SoftAP.Start()`:
-
-```cs
-HardwareButtons.BackPressed += hardwareButtonsBackPressed;
 ```
 
 You will need to create an instance of the `SoftAPSettings` class to pass to `SoftAP.Start()`:
@@ -69,8 +41,35 @@ And populate the following required properties:
 | `CompletionPageType` | The page to show after compleation |
 | `Username` | The username of the user if you want it shown |
 | `CurrentDeviceNames` | A HashSet of current device names to check against when assigning a name |
+| `OnSoftAPExit` | A function of type `SoftAPExitEventHandler` that is called when the soft AP process exits |
 
-And last you can call start:
+If you are developing an application for Windows Phone, you will need to handle the hardware back buttons.
+
+Define BackPressed EventHandler:
+
+```cs
+void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
+{
+  e.Handled = SoftAP.BackButtonPressed();
+}
+```
+
+Add the handler:
+
+```cs
+HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+```
+
+And set it to remove on soft AP exit (and make sure to add this to your `SoftAPSettings.OnSoftAPExit`:
+
+```cs
+void SoftAPSettings_OnSoftAPExit()
+{
+  HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
+}
+```
+
+And finally you can call start:
 ```cs
 SoftAP.Start(softAPSettings);
 ```

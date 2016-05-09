@@ -49,6 +49,11 @@ namespace Particle.Setup.Pages
 
         #region Interaction Methods
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            SoftAP.BackButtonPressed();
+        }
+
         private async void OpenWiFiButton_Click(object sender, RoutedEventArgs e)
         {
             await Launcher.LaunchUriAsync(new Uri("ms-settings-wifi:"));

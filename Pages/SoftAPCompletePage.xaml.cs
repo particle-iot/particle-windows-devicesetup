@@ -70,6 +70,8 @@ namespace Particle.Setup.Pages
 
             if (!navigated)
                 Frame.Navigate(SoftAP.CurrentSoftAPSettings.CompletionPageType);
+
+            SoftAP.CurrentSoftAPSettings.SoftAPExit();
         }
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)

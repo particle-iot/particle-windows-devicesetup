@@ -27,8 +27,13 @@ namespace Particle.Setup.Pages
         }
 
         #endregion
-        
+
         #region Interaction Methods
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            SoftAP.BackButtonPressed();
+        }
 
         private void ChangeNetworkButton_Click(object sender, RoutedEventArgs e)
         {

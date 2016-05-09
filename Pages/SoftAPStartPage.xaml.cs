@@ -30,6 +30,11 @@ namespace Particle.Setup.Pages
 
         #region Interaction Methods
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            SoftAP.BackButtonPressed();
+        }
+
         private async void ReadyButton_Click(object sender, RoutedEventArgs e)
         {
             ReadyButton.IsEnabled = false;

@@ -41,10 +41,6 @@ namespace Particle.Setup
             softAPResult = new SoftAPResult();
         }
 
-        #endregion
-
-        #region Public Methods
-
         /// <summary>
         /// Start the soft AP process
         /// </summary>
@@ -56,6 +52,27 @@ namespace Particle.Setup
 
             CurrentSoftAPSettings = softAPSettings;
             CurrentSoftAPSettings.AppFrame.Navigate(typeof(SoftAPStartPage));
+        }
+
+        /// <summary>
+        /// Function to call when back button is pressed (on page or hardware/soft button) to go back and/or exit
+        /// </summary>
+        public static bool BackButtonPressed()
+        {
+            if (SoftAP.SoftAPResult.Result != SoftAPSetupResult.Started)
+            {
+                CurrentSoftAPSettings.SoftAPExit();
+                if (SoftAP.SoftAPResult.Result != SoftAPSetupResult.NotStarted)
+                    return false;
+            }
+
+            if (CurrentSoftAPSettings.AppFrame.CanGoBack)
+            {
+                CurrentSoftAPSettings.AppFrame.GoBack();
+                return true;
+            }
+
+            return false;
         }
 
         #endregion

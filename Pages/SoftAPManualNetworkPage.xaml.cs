@@ -28,6 +28,11 @@ namespace Particle.Setup.Pages
 
         #region Interaction Methods
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            SoftAP.BackButtonPressed();
+        }
+
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SoftAPSelectWiFiPage));
