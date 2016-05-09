@@ -107,7 +107,7 @@ namespace Particle.Setup {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The setup process couldn&apos;t configure the Photon&apos;s Wi-fi network. This is an internal problem with the device, so please try running setup again after resetting your Photon and putting it back in blinking blue listen mode if needed..
+        ///   Looks up a localized string similar to Setup process couldn&apos;t configure the Wi-Fi credentials for your {device}, please try running setup again after resetting your {device} and putting it back in blinking blue listen mode if needed..
         /// </summary>
         internal static string SoftAPCompletedTextFailureConfigure {
             get {
@@ -116,7 +116,7 @@ namespace Particle.Setup {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Congrats! You&apos;ve successfully set up your Photon..
+        ///   Looks up a localized string similar to Congrats! You&apos;ve successfully set up your {device}..
         /// </summary>
         internal static string SoftAPCompletedTextSuccess {
             get {

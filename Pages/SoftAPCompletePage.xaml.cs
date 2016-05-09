@@ -131,7 +131,7 @@ namespace Particle.Setup.Pages
             if (headerText != null)
                 ResultHeader.Text = headerText;
             if (textText != null)
-                ResultText.Text = textText;
+                ResultText.Text = textText.Replace("{device}", "Photon");
 
             if (showNameNewDevice)
             {

@@ -138,11 +138,11 @@
     <comment>Used on Page: Complete</comment>
   </data>
   <data name="SoftAPCompletedTextFailureConfigure" xml:space="preserve">
-    <value>The setup process couldn't configure the Photon's Wi-fi network. This is an internal problem with the device, so please try running setup again after resetting your Photon and putting it back in blinking blue listen mode if needed.</value>
+    <value>Setup process couldn't configure the Wi-Fi credentials for your {device}, please try running setup again after resetting your {device} and putting it back in blinking blue listen mode if needed.</value>
     <comment>Used on Page: Complete</comment>
   </data>
   <data name="SoftAPCompletedTextSuccess" xml:space="preserve">
-    <value>Congrats! You've successfully set up your Photon.</value>
+    <value>Congrats! You've successfully set up your {device}.</value>
     <comment>Used on Page: Complete</comment>
   </data>
   <data name="SoftAPCompletedTextSuccessDeviceOffline" xml:space="preserve">
