@@ -31,7 +31,7 @@ namespace Particle.Setup
         public Frame AppFrame { get; set; }
 
         /// <summary>
-        /// The page to show after compleation
+        /// The page to show after completion
         /// </summary>
         public Type CompletionPageType { get; set; }
 

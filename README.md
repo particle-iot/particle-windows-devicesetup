@@ -38,7 +38,7 @@ And populate the following required properties:
 | Value | Meaning |
 | --- | --- |
 | `AppFrame` | The main application frame |
-| `CompletionPageType` | The page to show after compleation |
+| `CompletionPageType` | The page to show after completion |
 | `Username` | The username of the user if you want it shown |
 | `CurrentDeviceNames` | A HashSet of current device names to check against when assigning a name |
 | `OnSoftAPExit` | A function of type `SoftAPExitEventHandler` that is called when the soft AP process exits |
@@ -127,9 +127,9 @@ var result = await SoftAPConfig.SetClaimCodeAsync(claimCode);
 ### Set configure AP
 
 * index is the index you want to use for your call to `SetConnectAPAsync`
-* scanAP is a scanAP from a call from `GetScanAPsAsync` 
+* scanAP is a scanAP from a call from `GetScanAPsAsync`
 * password is the plain text password for the above scanAP
-* publicKey is the publicKey from a call from `GetPublicKeyAsync` 
+* publicKey is the publicKey from a call from `GetPublicKeyAsync`
 
 ```cs
 var result = await SoftAPConfig.SetConfigureAPAsync(index, scanAP, password, publicKey);
@@ -145,7 +145,8 @@ var result = await SoftAPConfig.SetConnectAPAsync(index);
 
 ## Installation
 
-- Currently this is built using the .NET Framework 4.6
+- There is currently one version of the library:
+ - **portable46-win81+wpa81**: Portable .NET Framework 4.6 for use in Windows Runtime (WinRT) applications (Windows 8.1+ and Windows Phone 8.1+)
 - Any edition of Microsoft Visual Studio 2015 (Other build systems may also work, but are not officially supported.)
 - You can use either C# or VB
 
@@ -155,7 +156,7 @@ You can either [download Particle Device Setup library](https://github.com/spark
 
 ## Communication
 
-- If you **need help**, use [Our community website](http://community.particle.io), use the `Mobile` category for dicussion/troubleshooting Windows apps using the Particle Windows Cloud SDK.
+- If you **need help**, use [Our community website](http://community.particle.io), use the `Mobile` category for discussion/troubleshooting Windows apps using the Particle Windows Cloud SDK.
 
 - If you are certain you **found a bug**, _and can provide steps to reliably reproduce it_, [open an issue on GitHub](https://github.com/spark/particle-windows-devicesetup/labels/bug).
 - If you **have a feature request**, [open an issue on GitHub](https://github.com/spark/particle-windows-devicesetup/labels/enhancement).
