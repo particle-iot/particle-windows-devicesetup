@@ -2,6 +2,9 @@
 
 # Particle Device Setup library *(Alpha)*
 
+[![license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/spark/particle-windows-devicesetup/blob/master/LICENSE)
+[![NuGet Version](http://img.shields.io/nuget/v/Particle.Setup.svg?style=flat)](https://www.nuget.org/packages/Particle.Setup/)
+
 ## Introduction
 
 The Particle Device Setup library *(Alpha)* is meant for integrating the initial setup process of Particle devices in your app. This library will enable you to easily invoke a standalone setup wizard UI for setting up internet-connected products powered by a Particle device (Photon, P0, P1). The setup UI can be easily customized by a customization proxy class, that includes: look & feel, colors, texts and fonts as well as custom brand logos and custom instructional video for your product. There are good defaults in place if you don't set these properties, but you can override the look and feel as needed to suit the rest of your app.
