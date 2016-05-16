@@ -5,7 +5,7 @@ Particle Windows Device Setup library adheres to [Semantic Versioning](http://se
 
 ---
 
-## [0.1.0](https://github.com/spark/particle-windows-devicesetup/releases/tag/v0.1.0) (2016-??-??)
+## [0.1.0](https://github.com/spark/particle-windows-devicesetup/releases/tag/v0.1.0) (2016-05-16)
 
 * Use Particle.SDK 0.1.0
 * Add back buttons to packages
