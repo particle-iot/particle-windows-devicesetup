@@ -100,10 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
-    <DesignData Include="Dictionaries\ButtonDictionary.xaml">
+    <Page Include="Dictionaries\ButtonDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </DesignData>
+    </Page>
     <Page Include="Dictionaries\ColorDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

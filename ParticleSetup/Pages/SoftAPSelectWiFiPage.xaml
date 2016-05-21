@@ -12,8 +12,8 @@
     <local:SoftAPPage.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Dictionaries/ButtonDictionary.xaml" />
-                <ResourceDictionary Source="/Dictionaries/ColorDictionary.xaml" />
+                <ResourceDictionary Source="ms-appx:///Particle.Setup/Dictionaries/ButtonDictionary.xaml" />
+                <ResourceDictionary Source="ms-appx:///Particle.Setup/Dictionaries/ColorDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <converters:RssiToImageConverter x:Key="RssiToImageConverter" />
