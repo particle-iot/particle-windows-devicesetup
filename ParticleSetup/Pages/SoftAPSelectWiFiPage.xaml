@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Particle.UI.Controls"
-    xmlns:converters="using:Particle.UI.Converters"
+    xmlns:converters="using:Particle.Setup.Converters"
     mc:Ignorable="d">
 
     <local:SoftAPPage.Resources>
@@ -22,7 +22,7 @@
 
     <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
         <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/SoftAP/Background.png" />
+            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/Setup/Background.png" />
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding StatusBarHeight}" />
@@ -44,7 +44,7 @@
                     <ColumnDefinition Width=".04*" />
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="1" MinWidth="0" HorizontalAlignment="Left" Template="{StaticResource BackButton}" Click="BackButton_Click" />
-                <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Logo.png" />
+                <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/Setup/Logo.png" />
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>

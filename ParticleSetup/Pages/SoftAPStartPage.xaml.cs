@@ -32,7 +32,7 @@ namespace Particle.Setup.Pages
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            SoftAP.BackButtonPressed();
+            ParticleSetup.BackButtonPressed();
         }
 
         private async void ReadyButton_Click(object sender, RoutedEventArgs e)
@@ -41,7 +41,7 @@ namespace Particle.Setup.Pages
 
             ProgressBar.IsIndeterminate = true;
 
-            SoftAP.SoftAPResult.Result = SoftAPSetupResult.Started;
+            ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.Started;
             SoftAPConfig.SoftAPData.ClaimCode = await ParticleCloud.SharedCloud.CreateClaimCodeAsync();
 
             ProgressBar.IsIndeterminate = false;
@@ -55,11 +55,11 @@ namespace Particle.Setup.Pages
 
         private void SetupPage()
         {
-            SoftAP.SoftAPResult.Result = SoftAPSetupResult.NotStarted;
-            if (SoftAP.CurrentSoftAPSettings.Username == null)
+            ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.NotStarted;
+            if (ParticleSetup.CurrentSoftAPSettings.Username == null)
                 Username.Visibility = Visibility.Collapsed;
             else
-                Username.Text = SoftAP.CurrentSoftAPSettings.Username;
+                Username.Text = ParticleSetup.CurrentSoftAPSettings.Username;
         }
 
         #endregion

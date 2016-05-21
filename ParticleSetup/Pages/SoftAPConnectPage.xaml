@@ -18,7 +18,7 @@
     
     <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
         <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/SoftAP/Background.png" />
+            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/Setup/Background.png" />
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding StatusBarHeight}" />
@@ -40,7 +40,7 @@
                     <ColumnDefinition Width=".04*" />
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="1" MinWidth="0" HorizontalAlignment="Left" Template="{StaticResource BackButton}" Click="BackButton_Click" />
-                <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Logo.png" />
+                <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/Setup/Logo.png" />
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -58,7 +58,7 @@
                         <RowDefinition Height=".17*" />
                         <RowDefinition Height=".03*" />
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="1" Source="ms-appx:///Particle.Setup/Assets/SoftAP/ConnectToWiFi.png" />
+                    <Image Grid.Row="1" Source="ms-appx:///Particle.Setup/Assets/Setup/ConnectToWiFi.png" />
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width=".09*" />
@@ -93,7 +93,7 @@
                                 <ColumnDefinition Width="auto" />
                                 <ColumnDefinition Width="auto" />
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" MaxHeight="25" Margin="10,5" Source="ms-appx:///Particle.Setup/Assets/SoftAP/WiFiSignal/WifiSignalBlack4.png" />
+                            <Image Grid.Column="0" MaxHeight="25" Margin="10,5" Source="ms-appx:///Particle.Setup/Assets/Setup/WiFiSignal/WifiSignalBlack4.png" />
                             <TextBlock x:Name="PhotonNetworkTextBlock" Grid.Column="1" VerticalAlignment="Center" Foreground="Black" Style="{StaticResource BaseTextBlockStyle}" Text="Photon-XXXX" />
                         </Grid>
                         <TextBlock x:Uid="SoftAPConnectStep2Note" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="[XXXX will be a unique 4-digit code]" />

@@ -30,7 +30,7 @@ namespace Particle.Setup.Pages
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            SoftAP.BackButtonPressed();
+            ParticleSetup.BackButtonPressed();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

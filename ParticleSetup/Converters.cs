@@ -2,7 +2,7 @@
 using System;
 using Windows.UI.Xaml.Data;
 
-namespace Particle.UI.Converters
+namespace Particle.Setup.Converters
 {
     #region Converters
 
@@ -31,7 +31,7 @@ namespace Particle.UI.Converters
             else
                 image = "1";
 
-            return $"ms-appx:///Particle.Setup/Assets/SoftAP/WiFiSignal/WifiSignalWhite{unsecure}{image}.png";
+            return $"ms-appx:///Particle.Setup/Assets/Setup/WiFiSignal/WifiSignalWhite{unsecure}{image}.png";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

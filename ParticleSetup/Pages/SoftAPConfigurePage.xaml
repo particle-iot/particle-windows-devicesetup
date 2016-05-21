@@ -17,7 +17,7 @@
     
     <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
         <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/SoftAP/Background.png" />
+            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/Setup/Background.png" />
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding StatusBarHeight}" />
@@ -38,7 +38,7 @@
                     <ColumnDefinition Width=".10*" />
                     <ColumnDefinition Width=".04*" />
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Logo.png" />
+                <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/Setup/Logo.png" />
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -66,7 +66,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <ProgressRing x:Name="Step1ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
-                                <Image x:Name="Step1Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                                <Image x:Name="Step1Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/Setup/Checkmarks/CheckmarkCircle.png" />
                             </Grid>
                             <TextBlock x:Uid="SoftAPConfigureStep1" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Configure device Wi-Fi credentials]" />
                         </Grid>
@@ -77,7 +77,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <ProgressRing x:Name="Step2ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
-                                <Image x:Name="Step2Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                                <Image x:Name="Step2Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/Setup/Checkmarks/CheckmarkCircle.png" />
                             </Grid>
                             <TextBlock x:Uid="SoftAPConfigureStep2" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Connect to Wi-Fi network]" />
                         </Grid>
@@ -88,7 +88,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <ProgressRing x:Name="Step3ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
-                                <Image x:Name="Step3Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                                <Image x:Name="Step3Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/Setup/Checkmarks/CheckmarkCircle.png" />
                             </Grid>
                             <TextBlock x:Uid="SoftAPConfigureStep3" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Wait for device cloud connection]" />
                         </Grid>
@@ -99,7 +99,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <ProgressRing x:Name="Step4ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
-                                <Image x:Name="Step4Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                                <Image x:Name="Step4Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/Setup/Checkmarks/CheckmarkCircle.png" />
                             </Grid>
                             <TextBlock x:Uid="SoftAPConfigureStep4" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Check for internet connectivity]" />
                         </Grid>
@@ -110,7 +110,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <ProgressRing x:Name="Step5ProgressRing" HorizontalAlignment="Left" Background="Transparent" Foreground="White" />
-                                <Image x:Name="Step5Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Checkmarks/CheckmarkCircle.png" />
+                                <Image x:Name="Step5Checkmark" Width="40" Height="40" Margin="10,0,0,0" Visibility="Collapsed" HorizontalAlignment="Left" Source="ms-appx:///Particle.Setup/Assets/Setup/Checkmarks/CheckmarkCircle.png" />
                             </Grid>
                             <TextBlock x:Uid="SoftAPConfigureStep5" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Text="[Verify product ownership]" />
                         </Grid>

@@ -38,21 +38,21 @@ namespace Particle.Setup.Pages
             if (NameNewDevicePanel.Visibility == Visibility.Visible)
             {
                 var newName = NewDeviceNameTextBox.Text;
-                if (!newName.Equals(SoftAP.SoftAPResult.ParticleDevice.Name))
+                if (!newName.Equals(ParticleSetup.SoftAPResult.ParticleDevice.Name))
                 {
                     NewDeviceNameTextBox.IsEnabled = false;
                     DoneButton.IsEnabled = false;
 
                     ProgressBar.IsIndeterminate = true;
 
-                    await SoftAP.SoftAPResult.ParticleDevice.RenameAsync(NewDeviceNameTextBox.Text);
+                    await ParticleSetup.SoftAPResult.ParticleDevice.RenameAsync(NewDeviceNameTextBox.Text);
 
                     ProgressBar.IsIndeterminate = false;
                 }
             }
 
             var navigated = false;
-            var backStack = SoftAP.CurrentSoftAPSettings.AppFrame.BackStack;
+            var backStack = ParticleSetup.CurrentSoftAPSettings.AppFrame.BackStack;
             for (var i = backStack.Count; i > 0; --i)
             {
                 var pageStackEntry = backStack[i - 1];
@@ -61,22 +61,22 @@ namespace Particle.Setup.Pages
                 {
                     backStack.Remove(pageStackEntry);
                 }
-                else if (pageStackEntry.SourcePageType == SoftAP.CurrentSoftAPSettings.CompletionPageType)
+                else if (pageStackEntry.SourcePageType == ParticleSetup.CurrentSoftAPSettings.CompletionPageType)
                 {
                     navigated = true;
-                    SoftAP.CurrentSoftAPSettings.AppFrame.GoBack();
+                    ParticleSetup.CurrentSoftAPSettings.AppFrame.GoBack();
                 }
             }
 
             if (!navigated)
-                Frame.Navigate(SoftAP.CurrentSoftAPSettings.CompletionPageType);
+                Frame.Navigate(ParticleSetup.CurrentSoftAPSettings.CompletionPageType);
 
-            SoftAP.CurrentSoftAPSettings.SoftAPExit();
+            ParticleSetup.CurrentSoftAPSettings.SoftAPExit();
         }
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-            NewDeviceNameTextBox.Text = DeviceNameGenerator.GenerateUniqueName(SoftAP.CurrentSoftAPSettings.CurrentDeviceNames);
+            NewDeviceNameTextBox.Text = DeviceNameGenerator.GenerateUniqueName(ParticleSetup.CurrentSoftAPSettings.CurrentDeviceNames);
         }
 
         #endregion
@@ -95,7 +95,7 @@ namespace Particle.Setup.Pages
             string textText = null;
             bool showNameNewDevice = false;
 
-            switch (SoftAP.SoftAPResult.Result)
+            switch (ParticleSetup.SoftAPResult.Result)
             {
                 case SoftAPSetupResult.NotStarted:
                 case SoftAPSetupResult.Started:
@@ -129,7 +129,7 @@ namespace Particle.Setup.Pages
             }
 
             if (imageSource != null)
-                ResultImage.Source = new BitmapImage(new Uri($"ms-appx:///Particle.Setup/Assets/SoftAP/StatusIcons/StatusIcon{imageSource}.png"));
+                ResultImage.Source = new BitmapImage(new Uri($"ms-appx:///Particle.Setup/Assets/Setup/StatusIcons/StatusIcon{imageSource}.png"));
             if (headerText != null)
                 ResultHeader.Text = headerText;
             if (textText != null)
@@ -137,10 +137,10 @@ namespace Particle.Setup.Pages
 
             if (showNameNewDevice)
             {
-                if (string.IsNullOrWhiteSpace(SoftAP.SoftAPResult.ParticleDevice.Name))
-                    NewDeviceNameTextBox.Text = DeviceNameGenerator.GenerateUniqueName(SoftAP.CurrentSoftAPSettings.CurrentDeviceNames);
+                if (string.IsNullOrWhiteSpace(ParticleSetup.SoftAPResult.ParticleDevice.Name))
+                    NewDeviceNameTextBox.Text = DeviceNameGenerator.GenerateUniqueName(ParticleSetup.CurrentSoftAPSettings.CurrentDeviceNames);
                 else
-                    NewDeviceNameTextBox.Text = SoftAP.SoftAPResult.ParticleDevice.Name;
+                    NewDeviceNameTextBox.Text = ParticleSetup.SoftAPResult.ParticleDevice.Name;
 
                 NameNewDevicePanel.Visibility = Visibility.Visible;
             }

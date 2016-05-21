@@ -4,14 +4,14 @@
 
     <ControlTemplate x:Key="BackButton" TargetType="Button">
         <Border Margin="0" Padding="0" Background="Transparent">
-            <Image Margin="0,12" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Icons/IconBackArrow.png" />
+            <Image Margin="0,12" Source="ms-appx:///Particle.Setup/Assets/Setup/Icons/IconBackArrow.png" />
         </Border>
     </ControlTemplate>
 
     <ControlTemplate x:Key="RefreshButton" TargetType="Button">
         <Border Margin="0" Padding="0" Background="Transparent">
             <Grid>
-                <Image Margin="0,12" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Icons/IconRefresh.png" />
+                <Image Margin="0,12" Source="ms-appx:///Particle.Setup/Assets/Setup/Icons/IconRefresh.png" />
                 <ProgressRing MinWidth="0" MinHeight="0" Background="Transparent" />
             </Grid>
         </Border>

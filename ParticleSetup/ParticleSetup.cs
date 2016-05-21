@@ -3,7 +3,7 @@ using Particle.Setup.Pages;
 
 namespace Particle.Setup
 {
-    public class SoftAP
+    public class ParticleSetup
     {
         #region Private Static Members
 
@@ -59,10 +59,10 @@ namespace Particle.Setup
         /// </summary>
         public static bool BackButtonPressed()
         {
-            if (SoftAP.SoftAPResult.Result != SoftAPSetupResult.Started)
+            if (ParticleSetup.SoftAPResult.Result != SoftAPSetupResult.Started)
             {
                 CurrentSoftAPSettings.SoftAPExit();
-                if (SoftAP.SoftAPResult.Result != SoftAPSetupResult.NotStarted)
+                if (ParticleSetup.SoftAPResult.Result != SoftAPSetupResult.NotStarted)
                     return false;
             }
 

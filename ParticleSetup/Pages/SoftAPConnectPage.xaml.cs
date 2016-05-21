@@ -51,7 +51,7 @@ namespace Particle.Setup.Pages
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            SoftAP.BackButtonPressed();
+            ParticleSetup.BackButtonPressed();
         }
 
         private async void OpenWiFiButton_Click(object sender, RoutedEventArgs e)

@@ -37,7 +37,7 @@ namespace Particle.Setup {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Particle.Setup.SetupResources", typeof(SetupResources).GetTypeInfo().Assembly);
@@ -52,7 +52,7 @@ namespace Particle.Setup {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -64,7 +64,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Secured with {0}.
         /// </summary>
-        internal static string SecuredWith {
+        public static string SecuredWith {
             get {
                 return ResourceManager.GetString("SecuredWith", resourceCulture);
             }
@@ -73,7 +73,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Uh oh!.
         /// </summary>
-        internal static string SoftAPCompletedHeaderFailureConfigure {
+        public static string SoftAPCompletedHeaderFailureConfigure {
             get {
                 return ResourceManager.GetString("SoftAPCompletedHeaderFailureConfigure", resourceCulture);
             }
@@ -82,7 +82,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Setup completed successfully.
         /// </summary>
-        internal static string SoftAPCompletedHeaderSuccess {
+        public static string SoftAPCompletedHeaderSuccess {
             get {
                 return ResourceManager.GetString("SoftAPCompletedHeaderSuccess", resourceCulture);
             }
@@ -91,7 +91,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Setup completed.
         /// </summary>
-        internal static string SoftAPCompletedHeaderSuccessDeviceOffline {
+        public static string SoftAPCompletedHeaderSuccessDeviceOffline {
             get {
                 return ResourceManager.GetString("SoftAPCompletedHeaderSuccessDeviceOffline", resourceCulture);
             }
@@ -100,7 +100,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Setup completed.
         /// </summary>
-        internal static string SoftAPCompletedHeaderSuccessUnknown {
+        public static string SoftAPCompletedHeaderSuccessUnknown {
             get {
                 return ResourceManager.GetString("SoftAPCompletedHeaderSuccessUnknown", resourceCulture);
             }
@@ -109,7 +109,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Setup process couldn&apos;t configure the Wi-Fi credentials for your {device}, please try running setup again after resetting your {device} and putting it back in blinking blue listen mode if needed..
         /// </summary>
-        internal static string SoftAPCompletedTextFailureConfigure {
+        public static string SoftAPCompletedTextFailureConfigure {
             get {
                 return ResourceManager.GetString("SoftAPCompletedTextFailureConfigure", resourceCulture);
             }
@@ -118,7 +118,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Congrats! You&apos;ve successfully set up your {device}..
         /// </summary>
-        internal static string SoftAPCompletedTextSuccess {
+        public static string SoftAPCompletedTextSuccess {
             get {
                 return ResourceManager.GetString("SoftAPCompletedTextSuccess", resourceCulture);
             }
@@ -127,7 +127,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Your device has been successfully claimed to your account, however it is offline. If the device was already claimed before this setup, then the Wi-Fi connection may have failed, and you should try setup again..
         /// </summary>
-        internal static string SoftAPCompletedTextSuccessDeviceOffline {
+        public static string SoftAPCompletedTextSuccessDeviceOffline {
             get {
                 return ResourceManager.GetString("SoftAPCompletedTextSuccessDeviceOffline", resourceCulture);
             }
@@ -136,7 +136,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Setup was successful, but since you do not own this device we cannot know if the {device} has connected to the Internet. If you see the LED breathing cyan this means it worked! If not, please restart the setup process..
         /// </summary>
-        internal static string SoftAPCompletedTextSuccessUnknown {
+        public static string SoftAPCompletedTextSuccessUnknown {
             get {
                 return ResourceManager.GetString("SoftAPCompletedTextSuccessUnknown", resourceCulture);
             }
@@ -145,7 +145,7 @@ namespace Particle.Setup {
         /// <summary>
         ///   Looks up a localized string similar to Unknown.
         /// </summary>
-        internal static string Unknown {
+        public static string Unknown {
             get {
                 return ResourceManager.GetString("Unknown", resourceCulture);
             }

@@ -147,22 +147,22 @@ namespace Particle.Setup.Pages
             {
                 if (device.Id == SoftAPConfig.SoftAPData.DeviceId.Id)
                 {
-                    SoftAP.SoftAPResult.ParticleDevice = device;
+                    ParticleSetup.SoftAPResult.ParticleDevice = device;
                     break;
                 }
             }
 
-            if (SoftAP.SoftAPResult.ParticleDevice == null)
+            if (ParticleSetup.SoftAPResult.ParticleDevice == null)
             {
-                SoftAP.SoftAPResult.Result = SoftAPSetupResult.SuccessUnknown;
+                ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.SuccessUnknown;
             }
             else
             {
-                await SoftAP.SoftAPResult.ParticleDevice.RefreshAsync();
-                if (SoftAP.SoftAPResult.ParticleDevice.Connected)
-                    SoftAP.SoftAPResult.Result = SoftAPSetupResult.Success;
+                await ParticleSetup.SoftAPResult.ParticleDevice.RefreshAsync();
+                if (ParticleSetup.SoftAPResult.ParticleDevice.Connected)
+                    ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.Success;
                 else
-                    SoftAP.SoftAPResult.Result = SoftAPSetupResult.SuccessDeviceOffline;
+                    ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.SuccessDeviceOffline;
             }
 
             Step5ProgressRing.IsActive = false;
@@ -173,7 +173,7 @@ namespace Particle.Setup.Pages
 
         private void FailureToConfigure()
         {
-            SoftAP.SoftAPResult.Result = SoftAPSetupResult.FailureConfigure;
+            ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.FailureConfigure;
             Frame.Navigate(typeof(SoftAPCompletePage));
         }
 
