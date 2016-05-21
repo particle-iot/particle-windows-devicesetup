@@ -143,7 +143,7 @@
     <Content Include="Assets\SoftAP\Icons\IconBackArrow.png" />
     <Content Include="Assets\SoftAP\Icons\IconRefresh.png" />
     <Content Include="Assets\SoftAP\Logo.png" />
-    <Content Include="Assets\SoftAP\ConnectToPower.png" />
+    <Content Include="Assets\SoftAP\Device.png" />
     <Content Include="Assets\SoftAP\ConnectToWiFi.png" />
     <Content Include="Assets\SoftAP\StatusIcons\StatusIconFailure.png" />
     <Content Include="Assets\SoftAP\StatusIcons\StatusIconSuccess.png" />

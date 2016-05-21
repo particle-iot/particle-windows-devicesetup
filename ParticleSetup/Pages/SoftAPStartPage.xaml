@@ -58,7 +58,7 @@
                         <RowDefinition Height=".17*" />
                         <RowDefinition Height=".03*" />
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="1" Source="ms-appx:///Particle.Setup/Assets/SoftAP/ConnectToPower.png" />
+                    <Image Grid.Row="1" Source="ms-appx:///Particle.Setup/Assets/SoftAP/Device.png" />
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width=".09*" />
