@@ -56,7 +56,10 @@ namespace Particle.Setup.Pages
         private void SetupPage()
         {
             SoftAP.SoftAPResult.Result = SoftAPSetupResult.NotStarted;
-            Username.Text = SoftAP.CurrentSoftAPSettings.Username;
+            if (SoftAP.CurrentSoftAPSettings.Username == null)
+                Username.Visibility = Visibility.Collapsed;
+            else
+                Username.Text = SoftAP.CurrentSoftAPSettings.Username;
         }
 
         #endregion
