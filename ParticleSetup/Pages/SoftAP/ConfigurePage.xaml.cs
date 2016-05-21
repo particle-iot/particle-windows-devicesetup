@@ -7,13 +7,13 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace Particle.Setup.Pages
+namespace Particle.Setup.Pages.SoftAP
 {
-    public sealed partial class SoftAPConfigurePage : SoftAPPage
+    public sealed partial class ConfigurePage : SoftAPPage
     {
         #region Constructors
 
-        public SoftAPConfigurePage()
+        public ConfigurePage()
         {
             InitializeComponent();
             RootGrid.DataContext = UI.VisibleBoundsWindow.VisibleBounds;
@@ -168,13 +168,13 @@ namespace Particle.Setup.Pages
             Step5ProgressRing.IsActive = false;
             Step5Checkmark.Visibility = Visibility.Visible;
 
-            Frame.Navigate(typeof(SoftAPCompletePage));
+            Frame.Navigate(typeof(CompletePage));
         }
 
         private void FailureToConfigure()
         {
             ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.FailureConfigure;
-            Frame.Navigate(typeof(SoftAPCompletePage));
+            Frame.Navigate(typeof(CompletePage));
         }
 
         #endregion

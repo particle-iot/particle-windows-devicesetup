@@ -8,13 +8,13 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-namespace Particle.Setup.Pages
+namespace Particle.Setup.Pages.SoftAP
 {
-    public sealed partial class SoftAPCompletePage : SoftAPPage
+    public sealed partial class CompletePage : SoftAPPage
     {
         #region Constructors
 
-        public SoftAPCompletePage()
+        public CompletePage()
         {
             InitializeComponent();
             RootGrid.DataContext = UI.VisibleBoundsWindow.VisibleBounds;

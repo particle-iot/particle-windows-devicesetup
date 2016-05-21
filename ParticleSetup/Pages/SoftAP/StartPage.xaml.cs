@@ -5,13 +5,13 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace Particle.Setup.Pages
+namespace Particle.Setup.Pages.SoftAP
 {
-    public sealed partial class SoftAPStartPage : SoftAPPage
+    public sealed partial class StartPage : SoftAPPage
     {
         #region Constructors
 
-        public SoftAPStartPage()
+        public StartPage()
         {
             InitializeComponent();
             RootGrid.DataContext = UI.VisibleBoundsWindow.VisibleBounds;
@@ -46,7 +46,7 @@ namespace Particle.Setup.Pages
 
             ProgressBar.IsIndeterminate = false;
 
-            Frame.Navigate(typeof(SoftAPConnectPage));
+            Frame.Navigate(typeof(ConnectPage));
         }
 
         #endregion

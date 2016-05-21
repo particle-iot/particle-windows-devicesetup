@@ -4,13 +4,13 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace Particle.Setup.Pages
+namespace Particle.Setup.Pages.SoftAP
 {
-    public sealed partial class SoftAPSelectWiFiPage : SoftAPPage
+    public sealed partial class SelectWiFiPage : SoftAPPage
     {
         #region Constructors
 
-        public SoftAPSelectWiFiPage()
+        public SelectWiFiPage()
         {
             InitializeComponent();
             RootGrid.DataContext = UI.VisibleBoundsWindow.VisibleBounds;
@@ -36,7 +36,7 @@ namespace Particle.Setup.Pages
 
         private void ManualButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SoftAPManualNetworkPage));
+            Frame.Navigate(typeof(ManualNetworkPage));
         }
 
         private void PhotonWiFiListBox_ItemClick(object sender, ItemClickEventArgs e)
@@ -48,9 +48,9 @@ namespace Particle.Setup.Pages
             SoftAPConfig.SoftAPData.ScanAP = scanAP;
 
             if (scanAP.Security == SecurityType.SecurityOpen)
-                Frame.Navigate(typeof(SoftAPConfigurePage));
+                Frame.Navigate(typeof(ConfigurePage));
             else
-                Frame.Navigate(typeof(SoftAPPasswordPage));
+                Frame.Navigate(typeof(PasswordPage));
         }
 
         private void RescanButton_Click(object sender, RoutedEventArgs e)

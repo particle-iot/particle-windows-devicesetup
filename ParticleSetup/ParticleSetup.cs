@@ -1,5 +1,5 @@
 ﻿using Particle.Setup.Models;
-using Particle.Setup.Pages;
+using Particle.Setup.Pages.SoftAP;
 
 namespace Particle.Setup
 {
@@ -51,7 +51,7 @@ namespace Particle.Setup
             SoftAPConfig.ResetSoftAPData();
 
             CurrentSoftAPSettings = softAPSettings;
-            CurrentSoftAPSettings.AppFrame.Navigate(typeof(SoftAPStartPage));
+            CurrentSoftAPSettings.AppFrame.Navigate(typeof(StartPage));
         }
 
         /// <summary>

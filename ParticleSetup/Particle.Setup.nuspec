@@ -18,7 +18,7 @@
   <files>
     <file src="bin\$configuration$\Particle.Setup\Assets\**\*.*" target="lib\portable46-win81+wpa81\Particle.Setup\Assets\" />
     <file src="bin\$configuration$\Particle.Setup\Dictionaries\*.*" target="lib\portable46-win81+wpa81\Particle.Setup\Dictionaries\" />
-    <file src="bin\$configuration$\Particle.Setup\Pages\*.*" target="lib\portable46-win81+wpa81\Particle.Setup\Pages\" />
+    <file src="bin\$configuration$\Particle.Setup\Pages\**\*.*" target="lib\portable46-win81+wpa81\Particle.Setup\Pages\" />
     <file src="bin\$configuration$\Particle.Setup.xr.xml" target="lib\portable46-win81+wpa81\Particle.Setup\Particle.Setup.xr.xml" />
     <file src="bin\$configuration$\Particle.Setup.pri" target="lib\portable46-win81+wpa81\Particle.Setup.pri" />
   </files>

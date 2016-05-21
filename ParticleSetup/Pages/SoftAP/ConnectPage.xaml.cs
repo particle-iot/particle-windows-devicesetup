@@ -7,13 +7,13 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace Particle.Setup.Pages
+namespace Particle.Setup.Pages.SoftAP
 {
-    public sealed partial class SoftAPConnectPage : SoftAPPage
+    public sealed partial class ConnectPage : SoftAPPage
     {
         #region Constructors
 
-        public SoftAPConnectPage()
+        public ConnectPage()
         {
             InitializeComponent();
             RootGrid.DataContext = UI.VisibleBoundsWindow.VisibleBounds;
@@ -103,7 +103,7 @@ namespace Particle.Setup.Pages
                 {
                     checkingNetwork = false;
                     NetworkInformation.NetworkStatusChanged -= NetworkInformation_NetworkStatusChanged;
-                    Frame.Navigate(typeof(SoftAPSelectWiFiPage));
+                    Frame.Navigate(typeof(SelectWiFiPage));
                 }
                 else
                 {

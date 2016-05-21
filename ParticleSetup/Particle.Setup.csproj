@@ -39,28 +39,28 @@
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\SoftAPPage.cs" />
+    <Compile Include="Pages\SoftAP\SoftAPPage.cs" />
     <Compile Include="UI\WindowsRuntimeResourceManager.cs" />
-    <Compile Include="Pages\SoftAPCompletePage.xaml.cs">
-      <DependentUpon>SoftAPCompletePage.xaml</DependentUpon>
+    <Compile Include="Pages\SoftAP\CompletePage.xaml.cs">
+      <DependentUpon>CompletePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SoftAPConfigurePage.xaml.cs">
-      <DependentUpon>SoftAPConfigurePage.xaml</DependentUpon>
+    <Compile Include="Pages\SoftAP\ConfigurePage.xaml.cs">
+      <DependentUpon>ConfigurePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SoftAPConnectPage.xaml.cs">
-      <DependentUpon>SoftAPConnectPage.xaml</DependentUpon>
+    <Compile Include="Pages\SoftAP\ConnectPage.xaml.cs">
+      <DependentUpon>ConnectPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SoftAPManualNetworkPage.xaml.cs">
-      <DependentUpon>SoftAPManualNetworkPage.xaml</DependentUpon>
+    <Compile Include="Pages\SoftAP\ManualNetworkPage.xaml.cs">
+      <DependentUpon>ManualNetworkPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SoftAPPasswordPage.xaml.cs">
-      <DependentUpon>SoftAPPasswordPage.xaml</DependentUpon>
+    <Compile Include="Pages\SoftAP\PasswordPage.xaml.cs">
+      <DependentUpon>PasswordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SoftAPSelectWiFiPage.xaml.cs">
-      <DependentUpon>SoftAPSelectWiFiPage.xaml</DependentUpon>
+    <Compile Include="Pages\SoftAP\SelectWiFiPage.xaml.cs">
+      <DependentUpon>SelectWiFiPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SoftAPStartPage.xaml.cs">
-      <DependentUpon>SoftAPStartPage.xaml</DependentUpon>
+    <Compile Include="Pages\SoftAP\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SetupResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -108,31 +108,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\SoftAPCompletePage.xaml">
+    <Page Include="Pages\SoftAP\CompletePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\SoftAPConfigurePage.xaml">
+    <Page Include="Pages\SoftAP\ConfigurePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\SoftAPConnectPage.xaml">
+    <Page Include="Pages\SoftAP\ConnectPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\SoftAPManualNetworkPage.xaml">
+    <Page Include="Pages\SoftAP\ManualNetworkPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\SoftAPPasswordPage.xaml">
+    <Page Include="Pages\SoftAP\PasswordPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\SoftAPSelectWiFiPage.xaml">
+    <Page Include="Pages\SoftAP\SelectWiFiPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\SoftAPStartPage.xaml">
+    <Page Include="Pages\SoftAP\StartPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -186,14 +186,14 @@
       <DictionaryFiles Include="$(OutDir)Dictionaries\*.*" />
     </ItemGroup>
     <ItemGroup>
-      <PageFiles Include="$(OutDir)Pages\*.*" />
+      <PageFiles Include="$(OutDir)Pages\**\*.*" />
     </ItemGroup>
     <ItemGroup>
       <XrXmlFile Include="$(OutDir)Particle.Setup.xr.xml" />
     </ItemGroup>
     <Copy SourceFiles="@(AssetFiles)" DestinationFiles="@(AssetFiles->'$(OutDir)Particle.Setup\Assets\%(RecursiveDir)%(Filename)%(Extension)')" />
     <Copy SourceFiles="@(DictionaryFiles)" DestinationFolder="$(OutDir)Particle.Setup\Dictionaries" />
-    <Copy SourceFiles="@(PageFiles)" DestinationFolder="$(OutDir)Particle.Setup\Pages" />
+    <Copy SourceFiles="@(PageFiles)" DestinationFiles="@(PageFiles->'$(OutDir)Particle.Setup\Pages\%(RecursiveDir)%(Filename)%(Extension)')" />
     <Copy SourceFiles="@(XrXmlFile)" DestinationFolder="$(OutDir)Particle.Setup" />
     <Copy SourceFiles="$(TargetPath)" ContinueOnError="true" DestinationFolder="$(SolutionDir)Nuget\$(Configuration)" />
     <Exec Command="NuGet.exe pack $(ProjectFileName) -Prop Configuration=$(Configuration) -OutputDirectory $(SolutionDir)Nuget\$(Configuration)" />

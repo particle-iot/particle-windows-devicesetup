@@ -3,13 +3,13 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace Particle.Setup.Pages
+namespace Particle.Setup.Pages.SoftAP
 {
-    public sealed partial class SoftAPManualNetworkPage : SoftAPPage
+    public sealed partial class ManualNetworkPage : SoftAPPage
     {
         #region Constructors
 
-        public SoftAPManualNetworkPage()
+        public ManualNetworkPage()
         {
             InitializeComponent();
             RootGrid.DataContext = UI.VisibleBoundsWindow.VisibleBounds;
@@ -35,7 +35,7 @@ namespace Particle.Setup.Pages
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SoftAPSelectWiFiPage));
+            Frame.Navigate(typeof(SelectWiFiPage));
         }
 
         private void ConnectButton_Click(object sender, RoutedEventArgs e)
@@ -45,7 +45,7 @@ namespace Particle.Setup.Pages
             if (RequiresPasswordCheckBox.IsChecked.Value)
                 SoftAPConfig.SoftAPData.ScanAP.Security = SecurityType.SecurityWpa2AesPsk;
 
-            Frame.Navigate(typeof(SoftAPPasswordPage));
+            Frame.Navigate(typeof(PasswordPage));
         }
 
         #endregion

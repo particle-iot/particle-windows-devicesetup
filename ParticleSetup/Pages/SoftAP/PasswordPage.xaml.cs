@@ -5,13 +5,13 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 
-namespace Particle.Setup.Pages
+namespace Particle.Setup.Pages.SoftAP
 {
-    public sealed partial class SoftAPPasswordPage : SoftAPPage
+    public sealed partial class PasswordPage : SoftAPPage
     {
         #region Constructors
 
-        public SoftAPPasswordPage()
+        public PasswordPage()
         {
             InitializeComponent();
             RootGrid.DataContext = UI.VisibleBoundsWindow.VisibleBounds;
@@ -37,7 +37,7 @@ namespace Particle.Setup.Pages
 
         private void ChangeNetworkButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SoftAPSelectWiFiPage));
+            Frame.Navigate(typeof(SelectWiFiPage));
         }
 
         private void ConnectButton_Click(object sender, RoutedEventArgs e)
@@ -46,7 +46,7 @@ namespace Particle.Setup.Pages
                 return;
 
             SoftAPConfig.SoftAPData.Password = Password.Password;
-            Frame.Navigate(typeof(SoftAPConfigurePage));
+            Frame.Navigate(typeof(ConfigurePage));
         }
 
         private void TextBox_KeyUp(object sender, KeyRoutedEventArgs e)
