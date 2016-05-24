@@ -39,6 +39,22 @@
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Auth\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Auth\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Auth\SignupPage.xaml.cs">
+      <DependentUpon>SignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Auth\AuthPage.cs" />
+    <Compile Include="Pages\Auth\TokenCreatePage.xaml.cs">
+      <DependentUpon>TokenCreatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Auth\TokenLoginPage.xaml.cs">
+      <DependentUpon>TokenLoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SoftAP\SoftAPPage.cs" />
     <Compile Include="UI\WindowsRuntimeResourceManager.cs" />
     <Compile Include="Pages\SoftAP\CompletePage.xaml.cs">
@@ -72,7 +88,7 @@
     <Compile Include="Models\SoftAPData.cs" />
     <Compile Include="Models\SoftAPObjects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SoftAPSettings.cs" />
+    <Compile Include="SetupConfig.cs" />
     <Compile Include="UI\Controls\AlternatingRowListView.cs" />
     <Compile Include="Converters.cs" />
     <Compile Include="UI\VisibleBoundsWindow.cs" />
@@ -105,6 +121,26 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Dictionaries\ColorDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Auth\ForgotPasswordPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Auth\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Auth\SignupPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Auth\TokenCreatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Auth\TokenLoginPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

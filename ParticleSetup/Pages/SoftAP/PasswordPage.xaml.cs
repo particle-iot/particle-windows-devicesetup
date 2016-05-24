@@ -1,5 +1,4 @@
 ﻿using Particle.Setup.Models;
-using Windows.ApplicationModel.Resources;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -73,7 +72,6 @@ namespace Particle.Setup.Pages.SoftAP
         {
             SoftAPConfig.SoftAPData.Password = null;
 
-            ResourceLoader resourceLoader = new ResourceLoader();
             string securedWithValue;
 
             if (SoftAPConfig.SoftAPData.ScanAP.Security.HasFlag(SecurityType.SecurityWepPsk) || SoftAPConfig.SoftAPData.ScanAP.Security.HasFlag(SecurityType.SecurityWepShared))

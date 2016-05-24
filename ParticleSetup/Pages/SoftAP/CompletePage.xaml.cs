@@ -1,8 +1,6 @@
 ﻿using Particle.SDK.Utils;
 using Particle.Setup.Models;
 using System;
-using System.Reflection;
-using Windows.ApplicationModel.Resources;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
@@ -51,32 +49,12 @@ namespace Particle.Setup.Pages.SoftAP
                 }
             }
 
-            var navigated = false;
-            var backStack = ParticleSetup.CurrentSoftAPSettings.AppFrame.BackStack;
-            for (var i = backStack.Count; i > 0; --i)
-            {
-                var pageStackEntry = backStack[i - 1];
-                
-                if (pageStackEntry.SourcePageType.GetTypeInfo().BaseType == typeof(SoftAPPage))
-                {
-                    backStack.Remove(pageStackEntry);
-                }
-                else if (pageStackEntry.SourcePageType == ParticleSetup.CurrentSoftAPSettings.CompletionPageType)
-                {
-                    navigated = true;
-                    ParticleSetup.CurrentSoftAPSettings.AppFrame.GoBack();
-                }
-            }
-
-            if (!navigated)
-                Frame.Navigate(ParticleSetup.CurrentSoftAPSettings.CompletionPageType);
-
-            ParticleSetup.CurrentSoftAPSettings.SoftAPExit();
+            ParticleSetup.End();
         }
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-            NewDeviceNameTextBox.Text = DeviceNameGenerator.GenerateUniqueName(ParticleSetup.CurrentSoftAPSettings.CurrentDeviceNames);
+            NewDeviceNameTextBox.Text = DeviceNameGenerator.GenerateUniqueName(ParticleSetup.CurrentSetupSettings.CurrentDeviceNames);
         }
 
         #endregion
@@ -89,7 +67,6 @@ namespace Particle.Setup.Pages.SoftAP
             ResultHeader.Text = "";
             ResultText.Text = "";
 
-            ResourceLoader resourceLoader = new ResourceLoader();
             string imageSource = null;
             string headerText = null;
             string textText = null;
@@ -138,7 +115,7 @@ namespace Particle.Setup.Pages.SoftAP
             if (showNameNewDevice)
             {
                 if (string.IsNullOrWhiteSpace(ParticleSetup.SoftAPResult.ParticleDevice.Name))
-                    NewDeviceNameTextBox.Text = DeviceNameGenerator.GenerateUniqueName(ParticleSetup.CurrentSoftAPSettings.CurrentDeviceNames);
+                    NewDeviceNameTextBox.Text = DeviceNameGenerator.GenerateUniqueName(ParticleSetup.CurrentSetupSettings.CurrentDeviceNames);
                 else
                     NewDeviceNameTextBox.Text = ParticleSetup.SoftAPResult.ParticleDevice.Name;
 

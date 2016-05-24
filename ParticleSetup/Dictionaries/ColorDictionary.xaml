@@ -4,6 +4,8 @@
 
     <SolidColorBrush x:Key="ButtonBlue">#00BAEC</SolidColorBrush>
     <SolidColorBrush x:Key="HeaderTransparency">#46000000</SolidColorBrush>
+    <SolidColorBrush x:Key="ErrorRed">#FF0030</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessGreen">#2ECC71</SolidColorBrush>
     
     <SolidColorBrush x:Key="Cyan">#00ACED</SolidColorBrush>
 </ResourceDictionary>

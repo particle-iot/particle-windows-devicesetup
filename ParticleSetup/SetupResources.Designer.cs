@@ -62,6 +62,78 @@ namespace Particle.Setup {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your credentials are invalid.
+        /// </summary>
+        public static string AuthCredentialsError {
+            get {
+                return ResourceManager.GetString("AuthCredentialsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This account already exists.
+        /// </summary>
+        public static string CreateCredentialsError {
+            get {
+                return ResourceManager.GetString("CreateCredentialsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email field is required.
+        /// </summary>
+        public static string ErrorEmailIsRequired {
+            get {
+                return ResourceManager.GetString("ErrorEmailIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password field is required.
+        /// </summary>
+        public static string ErrorPasswordIsRequired {
+            get {
+                return ResourceManager.GetString("ErrorPasswordIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password fields must match.
+        /// </summary>
+        public static string ErrorPasswordsMustMatch {
+            get {
+                return ResourceManager.GetString("ErrorPasswordsMustMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Token field is required.
+        /// </summary>
+        public static string ErrorTokenIsRequired {
+            get {
+                return ResourceManager.GetString("ErrorTokenIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not find a user with the supplied email address.
+        /// </summary>
+        public static string ForgotPasswordError {
+            get {
+                return ResourceManager.GetString("ForgotPasswordError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please check your email and follow the directions contained inside.
+        /// </summary>
+        public static string ForgotPasswordSuccess {
+            get {
+                return ResourceManager.GetString("ForgotPasswordSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Secured with {0}.
         /// </summary>
         public static string SecuredWith {
@@ -139,6 +211,24 @@ namespace Particle.Setup {
         public static string SoftAPCompletedTextSuccessUnknown {
             get {
                 return ResourceManager.GetString("SoftAPCompletedTextSuccessUnknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expire time is in the past.
+        /// </summary>
+        public static string TokenCreateExpireTimePast {
+            get {
+                return ResourceManager.GetString("TokenCreateExpireTimePast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expire time is too soon.
+        /// </summary>
+        public static string TokenCreateExpireTimeSoon {
+            get {
+                return ResourceManager.GetString("TokenCreateExpireTimeSoon", resourceCulture);
             }
         }
         

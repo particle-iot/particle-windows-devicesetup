@@ -119,126 +119,246 @@
   </resheader>
   <data name="PasswordPlaceholder.PlaceholderText" xml:space="preserve">
     <value>password</value>
-    <comment>Used on Page: Password</comment>
+    <comment>Used on Page: SoftAP - Password</comment>
   </data>
   <data name="Cancel.Text" xml:space="preserve">
     <value>Cancel</value>
-    <comment>Used on Page: Manual Network</comment>
+    <comment>Used on Page: SoftAP - Manual Network</comment>
   </data>
   <data name="ChangeNetwork.Text" xml:space="preserve">
     <value>Change network</value>
-    <comment>Used on Page: Password</comment>
+    <comment>Used on Page: SoftAP - Password</comment>
   </data>
   <data name="ButtonConnect.Content" xml:space="preserve">
     <value>CONNECT</value>
-    <comment>Used on Page: Password</comment>
+    <comment>Used on Page: SoftAP - Password</comment>
   </data>
   <data name="NetworkNotListed.Text" xml:space="preserve">
     <value>My network is not listed</value>
-    <comment>Used on Page: SelectWiFi</comment>
+    <comment>Used on Page: SoftAP - SelectWiFi</comment>
   </data>
   <data name="ButtonReady.Content" xml:space="preserve">
     <value>READY</value>
-    <comment>Used on Page: Start</comment>
+    <comment>Used on Page: SoftAP - Start</comment>
   </data>
   <data name="ButtonRescan.Content" xml:space="preserve">
     <value>RESCAN</value>
-    <comment>Used on Page: SelectWiFi</comment>
+    <comment>Used on Page: SoftAP - SelectWiFi</comment>
   </data>
   <data name="ButtonOpenWiFi.Content" xml:space="preserve">
     <value>OPEN WIFI</value>
-    <comment>Used on Page: Connect</comment>
+    <comment>Used on Page: SoftAP - Connect</comment>
   </data>
   <data name="NetworkRequiresPassword.Text" xml:space="preserve">
     <value>This network requires a password</value>
-    <comment>Used on Page: Password</comment>
+    <comment>Used on Page: SoftAP - Password</comment>
   </data>
   <data name="SelectYourWifi.Text" xml:space="preserve">
     <value>Select your Wi-Fi network</value>
-    <comment>Used on Page: SelectWiFi</comment>
+    <comment>Used on Page: SoftAP - SelectWiFi</comment>
   </data>
   <data name="SoftAPConnectStep1.Text" xml:space="preserve">
     <value>Tap Start &gt; Settings &gt; Wi-Fi</value>
-    <comment>Used on Page: Connect</comment>
+    <comment>Used on Page: SoftAP - Connect</comment>
   </data>
   <data name="SoftAPConnectStep2.Text" xml:space="preserve">
     <value>Make sure Wi-Fi is turned on, and choose the network below:</value>
-    <comment>Used on Page: Connect</comment>
+    <comment>Used on Page: SoftAP - Connect</comment>
   </data>
   <data name="SoftAPConnectStep2Note.Text" xml:space="preserve">
     <value>XXXX will be a unique 4-digit code</value>
-    <comment>Used on Page: SoftAP - Connect</comment>
+    <comment>Used on Page: SoftAP - SoftAP - Connect</comment>
   </data>
   <data name="SoftAPConnectStep3.Text" xml:space="preserve">
     <value>Once connected, return to this app</value>
-    <comment>Used on Page: Connect</comment>
+    <comment>Used on Page: SoftAP - Connect</comment>
   </data>
   <data name="SoftAPStartStep1.Text" xml:space="preserve">
     <value>Plug in your Particle device to power it on</value>
-    <comment>Used on Page: Start</comment>
+    <comment>Used on Page: SoftAP - Start</comment>
   </data>
   <data name="SoftAPStartStep2.Text" xml:space="preserve">
     <value>The on-board LED should be blinking blue. If not, hold the mode button for 3 seconds</value>
-    <comment>Used on Page: Start</comment>
+    <comment>Used on Page: SoftAP - Start</comment>
   </data>
   <data name="SoftAPStartStep3.Text" xml:space="preserve">
     <value>Make sure this device is connected to the internet</value>
-    <comment>Used on Page: Start</comment>
+    <comment>Used on Page: SoftAP - Start</comment>
   </data>
   <data name="SoftAPConfigureStep1.Text" xml:space="preserve">
     <value>Configure device Wi-Fi credentials</value>
-    <comment>Used on Page: Configure</comment>
+    <comment>Used on Page: SoftAP - Configure</comment>
   </data>
   <data name="SoftAPConfigureStep2.Text" xml:space="preserve">
     <value>Connect to Wi-Fi network</value>
-    <comment>Used on Page: Configure</comment>
+    <comment>Used on Page: SoftAP - Configure</comment>
   </data>
   <data name="SoftAPConfigureStep3.Text" xml:space="preserve">
     <value>Wait for device cloud connection</value>
-    <comment>Used on Page: Configure</comment>
+    <comment>Used on Page: SoftAP - Configure</comment>
   </data>
   <data name="SoftAPConfigureStep4.Text" xml:space="preserve">
     <value>Check for internet connectivity</value>
-    <comment>Used on Page: Configure</comment>
+    <comment>Used on Page: SoftAP - Configure</comment>
   </data>
   <data name="SoftAPConfigureStep5.Text" xml:space="preserve">
     <value>Verify product ownership</value>
-    <comment>Used on Page: Configure</comment>
+    <comment>Used on Page: SoftAP - Configure</comment>
   </data>
   <data name="ThisCanTakeAMinute.Text" xml:space="preserve">
     <value>This can take about a minute.</value>
-    <comment>Used on Page: Configure</comment>
+    <comment>Used on Page: SoftAP - Configure</comment>
   </data>
   <data name="YourDeviceIsConnectingTo.Text" xml:space="preserve">
     <value>Your Particle device is connecting to:</value>
-    <comment>Used on Page: Configure</comment>
+    <comment>Used on Page: SoftAP - Configure</comment>
   </data>
   <data name="ButtonCancel.Content" xml:space="preserve">
     <value>CANCEL</value>
-    <comment>Used on Page: Manual Network</comment>
+    <comment>Used on Page: SoftAP - Manual Network</comment>
   </data>
   <data name="ButtonDone.Content" xml:space="preserve">
     <value>DONE</value>
-    <comment>Used on Page: Complete</comment>
+    <comment>Used on Page: SoftAP - Complete</comment>
   </data>
   <data name="ButtonNetworkRequiresPassword.Content" xml:space="preserve">
     <value>Network requires password</value>
-    <comment>Used on Page: Manual Network</comment>
+    <comment>Used on Page: SoftAP - Manual Network</comment>
   </data>
   <data name="ManualNetworkName.Text" xml:space="preserve">
     <value>Manual network name entry</value>
-    <comment>Used on Page: Manual Network</comment>
+    <comment>Used on Page: SoftAP - Manual Network</comment>
   </data>
   <data name="NetworkName.PlaceholderText" xml:space="preserve">
     <value>network name</value>
-    <comment>Used on Page: Manual Network</comment>
+    <comment>Used on Page: SoftAP - Manual Network</comment>
   </data>
   <data name="NameNewDevice.Text" xml:space="preserve">
     <value>Name your new device</value>
-    <comment>Used on Page: Complete</comment>
+    <comment>Used on Page: SoftAP - Complete</comment>
   </data>
   <data name="NewDeviceNamePlaceholder.PlaceholderText" xml:space="preserve">
     <value>awesome_device</value>
-    <comment>Used on Page: Complete</comment>
+    <comment>Used on Page: SoftAP - Complete</comment>
+  </data>
+  <data name="AlreadyHaveAccount.Text" xml:space="preserve">
+    <value>I already have an account</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="AppBarCreateToken.Label" xml:space="preserve">
+    <value>Create Token</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="AppBarLoginWithToken.Label" xml:space="preserve">
+    <value>Log In with Token</value>
+    <comment>Used on Page: Auth - Login</comment>
+  </data>
+  <data name="ButtonCreate.Content" xml:space="preserve">
+    <value>CREATE</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="ButtonLogin.Content" xml:space="preserve">
+    <value>LOG IN</value>
+    <comment>Used on Page: Auth - Login, TokenLogin</comment>
+  </data>
+  <data name="ButtonNeverExpires.Content" xml:space="preserve">
+    <value>Never Expires</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="ButtonResetPassword.Content" xml:space="preserve">
+    <value>RESET PASSWORD</value>
+    <comment>Used on Page: Auth - ForgotPassword</comment>
+  </data>
+  <data name="ButtonSignup.Content" xml:space="preserve">
+    <value>SIGN UP</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Used on Page: Auth - ForgotPassword, CreateToken</comment>
+  </data>
+  <data name="CreateParticleAccount.Text" xml:space="preserve">
+    <value>Create Particle account</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="CreateParticleToken.Text" xml:space="preserve">
+    <value>Create Particle token</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="DialogButtonOk.Content" xml:space="preserve">
+    <value>ok</value>
+    <comment>Used on Flyout</comment>
+  </data>
+  <data name="Done.Text" xml:space="preserve">
+    <value>Done</value>
+    <comment>Used on Flyout: CreateToken</comment>
+  </data>
+  <data name="DontHaveAccount.Text" xml:space="preserve">
+    <value>I don't have an account</value>
+    <comment>Used on Page: Auth - Login</comment>
+  </data>
+  <data name="DontHaveToken.Text" xml:space="preserve">
+    <value>I don't have a token</value>
+    <comment>Used on Page: Auth - TokenLogin</comment>
+  </data>
+  <data name="EmailPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>email</value>
+    <comment>Used on Page: Auth - Login, Signup, ForgotPassword, CreateToken</comment>
+  </data>
+  <data name="Expires.Header" xml:space="preserve">
+    <value>Expires</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="ForgotPassword.Text" xml:space="preserve">
+    <value>I forgot my password</value>
+    <comment>Used on Page: Auth - Login</comment>
+  </data>
+  <data name="NewToken.Text" xml:space="preserve">
+    <value>Token</value>
+    <comment>Used on Flyout: CreateToken</comment>
+  </data>
+  <data name="NewTokenText.Text" xml:space="preserve">
+    <value>Here is your new token:</value>
+    <comment>Used on Flyout: CreateToken</comment>
+  </data>
+  <data name="ParticleLogin.Text" xml:space="preserve">
+    <value>Particle Login</value>
+    <comment>Used on Page: Auth - Login, TokenLogin</comment>
+  </data>
+  <data name="PasswordPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>password</value>
+    <comment>Used on Page: Auth - Login, Signup, CreateToken</comment>
+  </data>
+  <data name="RequestPasswordReset.Text" xml:space="preserve">
+    <value>Request password reset</value>
+    <comment>Used on Page: Auth - ForgotPassword</comment>
+  </data>
+  <data name="RequestPaswordResetText.Text" xml:space="preserve">
+    <value>An email will be sent to you with a link to a webpage where you can create a new password.</value>
+    <comment>Used on Page: Auth - ForgotPassword</comment>
+  </data>
+  <data name="SignupAnd.Text" xml:space="preserve">
+    <value>and</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="SignupByClicking.Text" xml:space="preserve">
+    <value>By clicking SIGN UP you are indicating thay you have read and agree to the</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="SignupPrivacyPolicy.Text" xml:space="preserve">
+    <value>Privacy Policy</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="SignupTermsOfService.Text" xml:space="preserve">
+    <value>Terms of Service</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="TokenPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>token</value>
+    <comment>Used on Page: Auth - TokenLogin</comment>
+  </data>
+  <data name="VerifyPasswordPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>verify password</value>
+    <comment>Used on Page: Auth - Signup</comment>
   </data>
 </root>
