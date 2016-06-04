@@ -70,7 +70,7 @@
                             <ColumnDefinition Width=".04*" />
                             <ColumnDefinition Width=".87*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Width="30" Height="30" MinWidth="0" Template="{StaticResource NumberButton}" Background="Black" Content="1" />
+                        <Button Grid.Column="0" Width="30" Height="30" MinWidth="0" BorderBrush="Black" Template="{StaticResource NumberButton}" Background="Black" Content="1" />
                         <TextBlock x:Uid="SoftAPStartStep1" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[Plug in your Particle device to power it on]" />
                     </Grid>
                     <Grid Grid.Row="3">
@@ -79,7 +79,7 @@
                             <ColumnDefinition Width=".04*" />
                             <ColumnDefinition Width=".87*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Width="30" Height="30" MinWidth="0" Template="{StaticResource NumberButton}" Background="Black" Content="2" />
+                        <Button Grid.Column="0" Width="30" Height="30" MinWidth="0" BorderBrush="Black" Template="{StaticResource NumberButton}" Background="Black" Content="2" />
                         <TextBlock x:Uid="SoftAPStartStep2" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[The on-board LED should be blinking blue. If not, hold the mode button for 3 seconds]" />
                     </Grid>
                     <Grid Grid.Row="4">
@@ -88,7 +88,7 @@
                             <ColumnDefinition Width=".04*" />
                             <ColumnDefinition Width=".87*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Width="30" Height="30" MinWidth="0" Template="{StaticResource NumberButton}" Background="Black" Content="3" />
+                        <Button Grid.Column="0" Width="30" Height="30" MinWidth="0" BorderBrush="Black" Template="{StaticResource NumberButton}" Background="Black" Content="3" />
                         <TextBlock x:Uid="SoftAPStartStep3" Grid.Column="2" VerticalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="Wrap" Text="[Make sure this device is connected to the internet]" />
                     </Grid>
                     <StackPanel Grid.Row="5" VerticalAlignment="Bottom">

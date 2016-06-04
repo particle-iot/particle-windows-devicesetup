@@ -137,6 +137,11 @@ namespace Particle.Setup
         public SolidColorBrush ElementForegroundColor { get; set; } = null;
 
         /// <summary>
+        /// Theme text color
+        /// </summary>
+        public SolidColorBrush ElementThemeColor { get; set; } = null;
+
+        /// <summary>
         /// This will mask the checkmark/warning/wifi symbols in the setup process to match text color (useful for light backgrounds)
         /// </summary>
         public SolidColorBrush MaskSetupImages { get; set; } = null;

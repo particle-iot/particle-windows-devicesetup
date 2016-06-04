@@ -56,7 +56,7 @@ namespace Particle.Setup.Pages
                 }
             }
 
-            if (ParticleSetup.CurrentSetupSettings.ElementForegroundColor != null || ParticleSetup.CurrentSetupSettings.ElementBackgroundColor != null)
+            if (ParticleSetup.CurrentSetupSettings.ElementForegroundColor != null || ParticleSetup.CurrentSetupSettings.ElementBackgroundColor != null || ParticleSetup.CurrentSetupSettings.ElementThemeColor != null)
             {
                 List<Button> controls = FindTypeInContainer<Button>(rootGrid);
                 foreach (Button control in controls)
@@ -65,7 +65,16 @@ namespace Particle.Setup.Pages
                         control.Foreground = ParticleSetup.CurrentSetupSettings.ElementForegroundColor;
 
                     if (ParticleSetup.CurrentSetupSettings?.ElementBackgroundColor != null)
-                        control.BorderBrush = ParticleSetup.CurrentSetupSettings.ElementBackgroundColor;
+                    {
+                        if (control.MinWidth != 0 || control.Content == null)
+                            control.BorderBrush = ParticleSetup.CurrentSetupSettings.ElementBackgroundColor;
+                    }
+
+                    if (ParticleSetup.CurrentSetupSettings?.ElementThemeColor != null)
+                    {
+                        if (control.MinWidth == 0 && control.Content != null)
+                            control.BorderBrush = ParticleSetup.CurrentSetupSettings.ElementThemeColor;
+                    }
                 }
             }
 
