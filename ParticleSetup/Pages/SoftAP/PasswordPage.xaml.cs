@@ -83,6 +83,7 @@ namespace Particle.Setup.Pages.SoftAP
             else
                 securedWithValue = SetupResources.Unknown;
 
+            SetCustomization(RootGrid);
             SsidTextBlock.Text = SoftAPConfig.SoftAPData.ScanAP.SSID;
             SecuredWithTextBlock.Text = string.Format(SetupResources.SecuredWith, securedWithValue);
         }

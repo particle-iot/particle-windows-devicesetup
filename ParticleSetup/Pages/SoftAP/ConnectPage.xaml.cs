@@ -34,7 +34,7 @@ namespace Particle.Setup.Pages.SoftAP
 
         private object checkingNetworkLock = new object();
         private volatile bool checkingNetwork = false;
-        private volatile bool verifiedPhoton = false;
+        private volatile bool verifiedDevice = false;
 
         #endregion
 
@@ -67,7 +67,7 @@ namespace Particle.Setup.Pages.SoftAP
         {
             lock (checkingNetworkLock)
             {
-                if (checkingNetwork || verifiedPhoton)
+                if (checkingNetwork || verifiedDevice)
                     return;
 
                 checkingNetwork = true;
@@ -77,20 +77,21 @@ namespace Particle.Setup.Pages.SoftAP
             ProfileFilter.IsWlanConnectionProfile = true;
             ProfileFilter.IsConnected = true;
 
-            ConnectionProfile photonConnectionProfile = null;
+            ConnectionProfile deviceConnectionProfile = null;
 
             var connectionProfilesAsync = NetworkInformation.FindConnectionProfilesAsync(ProfileFilter);
             var connectionProfiles = await connectionProfilesAsync.AsTask();
+            var conectionProfileNameLength = ParticleSetup.CurrentSetupSettings.NetworkNamePrefix.Length + 5;
             foreach (var connectionProfile in connectionProfiles)
             {
-                if (connectionProfile.ProfileName.StartsWith("Photon-") && connectionProfile.ProfileName.Length == 11)
+                if (connectionProfile.ProfileName.StartsWith(ParticleSetup.CurrentSetupSettings.NetworkNamePrefix) && connectionProfile.ProfileName.Length == conectionProfileNameLength)
                 {
-                    photonConnectionProfile = connectionProfile;
+                    deviceConnectionProfile = connectionProfile;
                     break;
                 }
             }
 
-            if (photonConnectionProfile == null)
+            if (deviceConnectionProfile == null)
             {
                 checkingNetwork = false;
                 return;
@@ -98,8 +99,8 @@ namespace Particle.Setup.Pages.SoftAP
 
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
-                verifiedPhoton = await VerifyPhotonConnectionAsync(photonConnectionProfile);
-                if (verifiedPhoton)
+                verifiedDevice = await VerifyDeviceConnectionAsync(deviceConnectionProfile);
+                if (verifiedDevice)
                 {
                     checkingNetwork = false;
                     NetworkInformation.NetworkStatusChanged -= NetworkInformation_NetworkStatusChanged;
@@ -116,7 +117,7 @@ namespace Particle.Setup.Pages.SoftAP
         {
             await GetConnectedWiFiAsync();
 
-            if (verifiedPhoton)
+            if (verifiedDevice)
                 return;
 
             NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;
@@ -127,13 +128,16 @@ namespace Particle.Setup.Pages.SoftAP
             SoftAPConfig.SoftAPData.Version = null;
             SoftAPConfig.SoftAPData.DeviceId = null;
             SoftAPConfig.SoftAPData.PublicKey = null;
+            
+            SetCustomization(RootGrid);
+            DeviceNetworkTextBox.Text = DeviceNetworkTextBox.Text.Replace("{network prefix}", ParticleSetup.CurrentSetupSettings.NetworkNamePrefix);
 
             ScanForNetworkChangeAsync();
         }
 
-        private async Task<bool> VerifyPhotonConnectionAsync(ConnectionProfile connectionProfile)
+        private async Task<bool> VerifyDeviceConnectionAsync(ConnectionProfile connectionProfile)
         {
-            PhotonNetworkTextBlock.Text = connectionProfile.ProfileName;
+            DeviceNetworkTextBox.Text = connectionProfile.ProfileName;
             ProgressBar.IsIndeterminate = true;
             int setClaimCode = -1;
             int maxRetries = 5;

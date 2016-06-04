@@ -63,7 +63,7 @@ namespace Particle.Setup.Pages.SoftAP
 
         private void ShowResult()
         {
-            ResultImage.Source = null;
+            ResultImage.UriSource = null;
             ResultHeader.Text = "";
             ResultText.Text = "";
 
@@ -105,12 +105,14 @@ namespace Particle.Setup.Pages.SoftAP
                     break;
             }
 
+            SetCustomization(RootGrid);
+
             if (imageSource != null)
-                ResultImage.Source = new BitmapImage(new Uri($"ms-appx:///Particle.Setup/Assets/Setup/StatusIcons/StatusIcon{imageSource}.png"));
+                ResultImage.UriSource = new Uri($"ms-appx:///Particle.Setup/Assets/Setup/StatusIcons/StatusIcon{imageSource}.png");
             if (headerText != null)
                 ResultHeader.Text = headerText;
             if (textText != null)
-                ResultText.Text = textText.Replace("{device}", "Photon");
+                ResultText.Text = textText.Replace("{device}", ParticleSetup.CurrentSetupSettings.DeviceName);
 
             if (showNameNewDevice)
             {

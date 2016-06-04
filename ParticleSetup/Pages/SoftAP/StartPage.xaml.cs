@@ -56,6 +56,9 @@ namespace Particle.Setup.Pages.SoftAP
         private void SetupPage()
         {
             ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.NotStarted;
+
+            SetCustomization(RootGrid);
+
             if (ParticleSetup.Username == null)
                 Username.Visibility = Visibility.Collapsed;
             else

@@ -50,7 +50,7 @@ namespace Particle.Setup.Pages.SoftAP
             var connectionProfiles = await connectionProfilesAsync.AsTask();
             foreach (var connectionProfile in connectionProfiles)
             {
-                if (!connectionProfile.ProfileName.StartsWith("Photon-"))
+                if (!connectionProfile.ProfileName.StartsWith(ParticleSetup.CurrentSetupSettings.NetworkNamePrefix))
                 {
                     hasInternetAccess = connectionProfile.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
                     if (hasInternetAccess)
@@ -67,7 +67,9 @@ namespace Particle.Setup.Pages.SoftAP
         {
             NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;
 
-            WiFiName.Text = SoftAPConfig.SoftAPData.ScanAP.SSID;
+            SetCustomization(RootGrid);
+            YourDeviceIsConnectingToText.Text = YourDeviceIsConnectingToText.Text.Replace("{device}", ParticleSetup.CurrentSetupSettings.DeviceName);
+            WiFiNameText.Text = SoftAPConfig.SoftAPData.ScanAP.SSID;
 
             Step1Grid.Visibility = Visibility.Collapsed;
             Step2Grid.Visibility = Visibility.Collapsed;

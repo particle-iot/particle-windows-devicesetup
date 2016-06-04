@@ -2,6 +2,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Navigation;
 
 namespace Particle.Setup.Pages.Auth
 {
@@ -13,6 +14,15 @@ namespace Particle.Setup.Pages.Auth
         {
             InitializeComponent();
             RootGrid.DataContext = UI.VisibleBoundsWindow.VisibleBounds;
+        }
+
+        #endregion
+
+        #region Override Methods
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            SetupPage();
         }
 
         #endregion
@@ -91,6 +101,11 @@ namespace Particle.Setup.Pages.Auth
 
             Token.IsEnabled = enabled;
             NoTokenHyperlink.IsEnabled = enabled;
+        }
+
+        private void SetupPage()
+        {
+            SetCustomization(RootGrid);
         }
 
         #endregion

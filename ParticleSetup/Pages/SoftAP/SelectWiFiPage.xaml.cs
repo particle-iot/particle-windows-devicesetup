@@ -39,7 +39,7 @@ namespace Particle.Setup.Pages.SoftAP
             Frame.Navigate(typeof(ManualNetworkPage));
         }
 
-        private void PhotonWiFiListBox_ItemClick(object sender, ItemClickEventArgs e)
+        private void DeviceWiFiListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var scanAP = (SoftAPScanAP)e.ClickedItem;
             if (scanAP == null)
@@ -53,18 +53,37 @@ namespace Particle.Setup.Pages.SoftAP
                 Frame.Navigate(typeof(PasswordPage));
         }
 
+        private void DeviceWiFiListViewItemGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            var container = (DependencyObject)sender;
+
+            if (ParticleSetup.CurrentSetupSettings.TextForegroundColor != null)
+            {
+                List<TextBlock> controls = FindTypeInContainer<TextBlock>(container);
+                foreach (TextBlock control in controls)
+                    control.Foreground = ParticleSetup.CurrentSetupSettings.TextForegroundColor;
+            }
+
+            if (ParticleSetup.CurrentSetupSettings.MaskSetupImages != null)
+            {
+                List<BitmapIcon> controls = FindTypeInContainer<BitmapIcon>(container);
+                foreach (var control in controls)
+                    control.Foreground = ParticleSetup.CurrentSetupSettings.MaskSetupImages;
+            }
+        }
+
         private void RescanButton_Click(object sender, RoutedEventArgs e)
         {
-            GetPhotonWiFiAsync();
+            GetDeviceWiFiAsync();
         }
 
         #endregion
 
         #region Private Methods
 
-        private async void GetPhotonWiFiAsync()
+        private async void GetDeviceWiFiAsync()
         {
-            PhotonWiFiListBox.DataContext = null;
+            DeviceWiFiListView.DataContext = null;
             LoadWiFiProgress.IsActive = true;
             int maxRetries = 5;
             List<SoftAPScanAP> setupScanAPs = null;
@@ -76,7 +95,7 @@ namespace Particle.Setup.Pages.SoftAP
             }
 
             LoadWiFiProgress.IsActive = false;
-            PhotonWiFiListBox.DataContext = setupScanAPs;
+            DeviceWiFiListView.DataContext = setupScanAPs;
         }
 
         private void SetupPage()
@@ -84,7 +103,9 @@ namespace Particle.Setup.Pages.SoftAP
             SoftAPConfig.SoftAPData.ScanAP = null;
             SoftAPConfig.SoftAPData.Password = null;
 
-            GetPhotonWiFiAsync();
+            SetCustomization(RootGrid);
+
+            GetDeviceWiFiAsync();
         }
 
         #endregion

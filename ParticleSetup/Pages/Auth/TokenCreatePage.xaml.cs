@@ -166,7 +166,9 @@ namespace Particle.Setup.Pages.Auth
 
         private void SetupPage()
         {
-            var expires = DateTime.Now.AddMinutes(60); ;
+            var expires = DateTime.Now.AddMinutes(60);
+
+            SetCustomization(RootGrid);
 
             ExpireDate.Date = expires;
             ExpireTime.Time = expires.TimeOfDay;

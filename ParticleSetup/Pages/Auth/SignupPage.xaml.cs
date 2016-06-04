@@ -2,6 +2,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Navigation;
 
 namespace Particle.Setup.Pages.Auth
 {
@@ -16,6 +17,11 @@ namespace Particle.Setup.Pages.Auth
         }
 
         #endregion
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            SetupPage();
+        }
 
         #region Interaction Methods
 
@@ -127,6 +133,13 @@ namespace Particle.Setup.Pages.Auth
             Password.IsEnabled = enabled;
             PasswordAgain.IsEnabled = enabled;
             HaveAccountHyperlink.IsEnabled = enabled;
+        }
+
+        private void SetupPage()
+        {
+            SetCustomization(RootGrid);
+            TermsHyperlink.NavigateUri = ParticleSetup.CurrentSetupSettings.TermsOfServiceLinkURL;
+            PrivacyHyperlink.NavigateUri = ParticleSetup.CurrentSetupSettings.PrivacyPolicyLinkURL;
         }
 
         #endregion

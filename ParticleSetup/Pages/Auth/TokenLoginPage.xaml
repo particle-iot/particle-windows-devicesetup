@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Particle.Setup.Pages.Auth"
+    xmlns:converters="using:Particle.Setup.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -12,26 +13,29 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ms-appx:///Particle.Setup/Dictionaries/ColorDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <converters:BrandImageBackgroundConverter x:Key="BrandImageBackgroundConverter" />
+            <converters:BrandImageConverter x:Key="BrandImageConverter" />
+            <converters:BrandNameConverter x:Key="BrandNameConverter" />
+            <converters:PageBackgroundImageConverter x:Key="PageBackgroundImageConverter" />
         </ResourceDictionary>
     </local:AuthPage.Resources>
-    
-    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
-        <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:///Particle.Setup/Assets/Setup/Background.png" />
-        </Grid.Background>
+
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}" Background="{Binding Converter={StaticResource PageBackgroundImageConverter}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding StatusBarHeight}" />
             <RowDefinition Height="*" />
             <RowDefinition Height="{Binding NavigationBarHeight}" />
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Border Grid.Row="0" Background="{Binding Converter={StaticResource BrandImageBackgroundConverter}}" />
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="45" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
-                <Image Margin="0,6" HorizontalAlignment="Center" Source="ms-appx:///Particle.Setup/Assets/Setup/Logo.png" />
+            <Grid Grid.Row="0" Background="{Binding Converter={StaticResource BrandImageBackgroundConverter}}">
+                <Image Margin="0,6" HorizontalAlignment="Center" Source="{Binding Converter={StaticResource BrandImageConverter}}" />
+                <TextBlock Margin="0,6" HorizontalAlignment="Center" VerticalAlignment="Center" TextLineBounds="TrimToCapHeight" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Converter={StaticResource BrandNameConverter}}" />
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -45,14 +49,14 @@
                         <RowDefinition Height=".03*" />
                         <RowDefinition Height=".75*" />
                     </Grid.RowDefinitions>
-                    <TextBlock x:Uid="ParticleLogin" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource SubheaderTextBlockStyle}" Text="[Particle Login]" />
+                    <TextBlock x:Uid="ParticleLogin" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource SubheaderTextBlockStyle}" TextAlignment="Center" Text="[Particle Login]" />
                     <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
                         <StackPanel>
                             <Grid>
                                 <TextBox x:Name="Token" x:Uid="TokenPlaceholder" Margin="0" Padding="10" PlaceholderText="[token]" KeyUp="TextBox_KeyUp" />
                                 <Grid x:Name="TokenError" Width="20" Height="20" Margin="0,0,20,0" HorizontalAlignment="Right" Visibility="Collapsed">
                                     <Ellipse Width="20" Height="20" Fill="{StaticResource ErrorRed}" />
-                                    <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="16" Text="!" />
+                                    <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="White" Text="!" />
                                 </Grid>
                             </Grid>
                             <Border x:Name="ErrorBorder" Margin="0,20,0,0" Padding="10" Background="#CCFFFFFF" BorderBrush="{StaticResource ErrorRed}" BorderThickness="5,0,0,0" Visibility="Collapsed">
@@ -66,10 +70,10 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="1">
                                     <Grid Margin="0,20,0,0">
-                                        <Button x:Name="LoginButton" x:Uid="ButtonLogin" HorizontalAlignment="Stretch" VerticalAlignment="Top" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[LOG IN]" Click="LoginButton_Click" />
+                                        <Button x:Name="LoginButton" x:Uid="ButtonLogin" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="[LOG IN]" Click="LoginButton_Click" />
                                         <ProgressBar x:Name="ProgressBar" VerticalAlignment="Center" Background="Transparent" />
                                     </Grid>
-                                    <HyperlinkButton x:Name="NoTokenHyperlink" Margin="0,20,0,0" HorizontalAlignment="Center" FontSize="20" Click="NoTokenButton_Click">
+                                    <HyperlinkButton x:Name="NoTokenHyperlink" Margin="0,20,0,0" HorizontalAlignment="Center" Foreground="White" FontSize="20" Click="NoTokenButton_Click">
                                         <TextBlock>
                                             <Underline>
                                                 <Run x:Uid="DontHaveToken" Text="[I don't have a token]" />

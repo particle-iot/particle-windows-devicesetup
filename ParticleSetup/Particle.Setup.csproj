@@ -55,6 +55,7 @@
     <Compile Include="Pages\Auth\TokenLoginPage.xaml.cs">
       <DependentUpon>TokenLoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SetupPage.cs" />
     <Compile Include="Pages\SoftAP\SoftAPPage.cs" />
     <Compile Include="UI\WindowsRuntimeResourceManager.cs" />
     <Compile Include="Pages\SoftAP\CompletePage.xaml.cs">
@@ -95,7 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <PRIResource Include="Strings\en-US\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -174,7 +177,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Setup\Background.png" />
     <Content Include="Assets\Setup\Checkmarks\CheckmarkCircle.png" />
     <Content Include="Assets\Setup\Icons\IconBackArrow.png" />
     <Content Include="Assets\Setup\Icons\IconRefresh.png" />
@@ -209,6 +211,7 @@
     <EmbeddedResource Include="SetupResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SetupResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

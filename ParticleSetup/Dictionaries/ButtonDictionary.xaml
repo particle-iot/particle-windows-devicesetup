@@ -4,14 +4,21 @@
 
     <ControlTemplate x:Key="BackButton" TargetType="Button">
         <Border Margin="0" Padding="0" Background="Transparent">
-            <Image Margin="0,12" Source="ms-appx:///Particle.Setup/Assets/Setup/Icons/IconBackArrow.png" />
+            <BitmapIcon Margin="0,12" Foreground="{TemplateBinding Foreground}" UriSource="ms-appx:///Particle.Setup/Assets/Setup/Icons/IconBackArrow.png" />
         </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="NumberButton" TargetType="Button">
+        <Grid Width="30" Height="30">
+            <Ellipse Width="30" Height="30" Fill="{TemplateBinding Foreground}" />
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextLineBounds="Tight" Foreground="{TemplateBinding BorderBrush}" FontSize="20" />
+        </Grid>
     </ControlTemplate>
 
     <ControlTemplate x:Key="RefreshButton" TargetType="Button">
         <Border Margin="0" Padding="0" Background="Transparent">
             <Grid>
-                <Image Margin="0,12" Source="ms-appx:///Particle.Setup/Assets/Setup/Icons/IconRefresh.png" />
+                <BitmapIcon Margin="0,12" Foreground="{TemplateBinding Foreground}" UriSource="ms-appx:///Particle.Setup/Assets/Setup/Icons/IconRefresh.png" />
                 <ProgressRing MinWidth="0" MinHeight="0" Background="Transparent" />
             </Grid>
         </Border>

@@ -174,11 +174,11 @@
     <comment>Used on Page: SoftAP - Connect</comment>
   </data>
   <data name="SoftAPStartStep1.Text" xml:space="preserve">
-    <value>Plug in your Particle device to power it on</value>
+    <value>Plug in your {device} to power it on</value>
     <comment>Used on Page: SoftAP - Start</comment>
   </data>
   <data name="SoftAPStartStep2.Text" xml:space="preserve">
-    <value>The on-board LED should be blinking blue. If not, hold the mode button for 3 seconds</value>
+    <value>The on-board LED should be blinking {color}. If not, hold the {mode button} for 3 seconds</value>
     <comment>Used on Page: SoftAP - Start</comment>
   </data>
   <data name="SoftAPStartStep3.Text" xml:space="preserve">
@@ -210,7 +210,7 @@
     <comment>Used on Page: SoftAP - Configure</comment>
   </data>
   <data name="YourDeviceIsConnectingTo.Text" xml:space="preserve">
-    <value>Your Particle device is connecting to:</value>
+    <value>Your {device} is connecting to:</value>
     <comment>Used on Page: SoftAP - Configure</comment>
   </data>
   <data name="ButtonCancel.Content" xml:space="preserve">
@@ -278,11 +278,11 @@
     <comment>Used on Page: Auth - ForgotPassword, CreateToken</comment>
   </data>
   <data name="CreateParticleAccount.Text" xml:space="preserve">
-    <value>Create Particle account</value>
+    <value>Create {brand} account</value>
     <comment>Used on Page: Auth - Signup</comment>
   </data>
   <data name="CreateParticleToken.Text" xml:space="preserve">
-    <value>Create Particle token</value>
+    <value>Create {brand} token</value>
     <comment>Used on Page: Auth - CreateToken</comment>
   </data>
   <data name="DialogButtonOk.Content" xml:space="preserve">
@@ -322,7 +322,7 @@
     <comment>Used on Flyout: CreateToken</comment>
   </data>
   <data name="ParticleLogin.Text" xml:space="preserve">
-    <value>Particle Login</value>
+    <value>{brand} Login</value>
     <comment>Used on Page: Auth - Login, TokenLogin</comment>
   </data>
   <data name="PasswordPlaceholder.PlaceholderText" xml:space="preserve">

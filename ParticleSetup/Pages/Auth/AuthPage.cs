@@ -1,11 +1,9 @@
-﻿using Windows.UI.Xaml.Controls;
-
-namespace Particle.Setup.Pages.Auth
+﻿namespace Particle.Setup.Pages.Auth
 {
     /// <summary>
-    /// Generic class for grouping all SoftAP pages
+    /// Generic class for grouping all Auth pages
     /// </summary>
-    public partial class AuthPage : Page
+    public partial class AuthPage : SetupPage
     {
     }
 }

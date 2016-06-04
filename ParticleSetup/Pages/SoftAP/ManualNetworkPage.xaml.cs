@@ -56,6 +56,8 @@ namespace Particle.Setup.Pages.SoftAP
         {
             SoftAPConfig.SoftAPData.ScanAP = null;
             SoftAPConfig.SoftAPData.Password = null;
+
+            SetCustomization(RootGrid);
         }
 
         #endregion
