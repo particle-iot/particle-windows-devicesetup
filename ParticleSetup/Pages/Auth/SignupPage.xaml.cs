@@ -119,6 +119,11 @@ namespace Particle.Setup.Pages.Auth
             SetEnableState(true);
         }
 
+        private void SkipAuthenticationButton_Click(object sender, RoutedEventArgs e)
+        {
+            ParticleSetup.End();
+        }
+
         #endregion
 
         #region Private Methods

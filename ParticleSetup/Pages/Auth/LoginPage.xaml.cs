@@ -88,6 +88,11 @@ namespace Particle.Setup.Pages.Auth
             Frame.Navigate(typeof(SignupPage));
         }
 
+        private void SkipAuthenticationButton_Click(object sender, RoutedEventArgs e)
+        {
+            ParticleSetup.End();
+        }
+
         private void TextBox_KeyUp(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)

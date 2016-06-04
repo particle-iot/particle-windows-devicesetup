@@ -147,7 +147,7 @@ namespace Particle.Setup
         /// Start the soft AP process
         /// </summary>
         /// <param name="softAPSettings"></param>
-        public static void Start(SetupConfig softAPSettings, bool authenticationOnly = false)
+        public static void Start(SetupConfig softAPSettings, bool authenticationOnly = false, bool setupOnly = false)
         {
             ResetSoftAPResult();
             SoftAPConfig.ResetSoftAPData();
@@ -156,7 +156,7 @@ namespace Particle.Setup
 
             Type startPage = null;
 
-            if (string.IsNullOrWhiteSpace(AccessToken))
+            if (string.IsNullOrWhiteSpace(AccessToken) && !setupOnly)
             {
                 if (HasSignedIn)
                     startPage = typeof(Pages.Auth.LoginPage);

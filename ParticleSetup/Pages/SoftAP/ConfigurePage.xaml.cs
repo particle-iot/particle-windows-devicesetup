@@ -144,27 +144,34 @@ namespace Particle.Setup.Pages.SoftAP
             Step5ProgressRing.IsActive = true;
             Step5Grid.Visibility = Visibility.Visible;
 
-            var devices = await ParticleCloud.SharedCloud.GetDevicesAsync();
-            foreach (var device in devices)
-            {
-                if (device.Id == SoftAPConfig.SoftAPData.DeviceId.Id)
-                {
-                    ParticleSetup.SoftAPResult.ParticleDevice = device;
-                    break;
-                }
-            }
-
-            if (ParticleSetup.SoftAPResult.ParticleDevice == null)
+            if (ParticleSetup.AccessToken == null)
             {
                 ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.SuccessUnknown;
             }
             else
             {
-                await ParticleSetup.SoftAPResult.ParticleDevice.RefreshAsync();
-                if (ParticleSetup.SoftAPResult.ParticleDevice.Connected)
-                    ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.Success;
+                var devices = await ParticleCloud.SharedCloud.GetDevicesAsync();
+                foreach (var device in devices)
+                {
+                    if (device.Id == SoftAPConfig.SoftAPData.DeviceId.Id)
+                    {
+                        ParticleSetup.SoftAPResult.ParticleDevice = device;
+                        break;
+                    }
+                }
+
+                if (ParticleSetup.SoftAPResult.ParticleDevice == null)
+                {
+                    ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.SuccessUnknown;
+                }
                 else
-                    ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.SuccessDeviceOffline;
+                {
+                    await ParticleSetup.SoftAPResult.ParticleDevice.RefreshAsync();
+                    if (ParticleSetup.SoftAPResult.ParticleDevice.Connected)
+                        ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.Success;
+                    else
+                        ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.SuccessDeviceOffline;
+                }
             }
 
             Step5ProgressRing.IsActive = false;

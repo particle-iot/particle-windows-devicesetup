@@ -142,6 +142,9 @@ namespace Particle.Setup.Pages.SoftAP
             int setClaimCode = -1;
             int maxRetries = 5;
 
+            if (ParticleSetup.AccessToken == null)
+                setClaimCode = 0;
+
             for (int tries = 0; tries < maxRetries; ++tries)
             {
                 if (SoftAPConfig.SoftAPData.Version == null)

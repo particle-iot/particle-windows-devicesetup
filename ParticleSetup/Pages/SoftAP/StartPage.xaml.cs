@@ -37,14 +37,18 @@ namespace Particle.Setup.Pages.SoftAP
 
         private async void ReadyButton_Click(object sender, RoutedEventArgs e)
         {
-            ReadyButton.IsEnabled = false;
-
-            ProgressBar.IsIndeterminate = true;
-
             ParticleSetup.SoftAPResult.Result = SoftAPSetupResult.Started;
-            SoftAPConfig.SoftAPData.ClaimCode = await ParticleCloud.SharedCloud.CreateClaimCodeAsync();
 
-            ProgressBar.IsIndeterminate = false;
+            if (ParticleSetup.AccessToken != null)
+            {
+                ReadyButton.IsEnabled = false;
+
+                ProgressBar.IsIndeterminate = true;
+
+                SoftAPConfig.SoftAPData.ClaimCode = await ParticleCloud.SharedCloud.CreateClaimCodeAsync();
+
+                ProgressBar.IsIndeterminate = false;
+            }
 
             Frame.Navigate(typeof(ConnectPage));
         }

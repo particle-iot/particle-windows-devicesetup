@@ -18,6 +18,7 @@
             <converters:BrandImageConverter x:Key="BrandImageConverter" />
             <converters:BrandNameConverter x:Key="BrandNameConverter" />
             <converters:PageBackgroundImageConverter x:Key="PageBackgroundImageConverter" />
+            <converters:ShowSkipAuthenticationConverter x:Key="ShowSkipAuthenticationConverter" />
         </ResourceDictionary>
     </local:AuthPage.Resources>
     
@@ -101,6 +102,13 @@
                                             <TextBlock>
                                                 <Underline>
                                                     <Run x:Uid="ForgotPassword" Text="[I forgot my password]" />
+                                                </Underline>
+                                            </TextBlock>
+                                        </HyperlinkButton>
+                                        <HyperlinkButton x:Name="SkipAuthenticationHyperlink" Margin="0,20,0,0" HorizontalAlignment="Center" Foreground="White" FontSize="20" Visibility="{Binding Converter={StaticResource ShowSkipAuthenticationConverter}}" Click="SkipAuthenticationButton_Click">
+                                            <TextBlock>
+                                                <Underline>
+                                                    <Run x:Uid="SkipAuthentication" Text="[Skip authentication]" />
                                                 </Underline>
                                             </TextBlock>
                                         </HyperlinkButton>

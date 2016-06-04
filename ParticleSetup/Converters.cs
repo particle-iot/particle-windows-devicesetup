@@ -1,6 +1,7 @@
 ﻿using Particle.Setup.Models;
 using System;
 using Windows.UI;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 
@@ -132,6 +133,22 @@ namespace Particle.Setup.Converters
                 image = "1";
 
             return $"ms-appx:///Particle.Setup/Assets/Setup/WiFiSignal/WifiSignalWhite{unsecure}{image}.png";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    internal class ShowSkipAuthenticationConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            if (ParticleSetup.CurrentSetupSettings == null)
+                return Visibility.Visible;
+            else
+                return ParticleSetup.CurrentSetupSettings.CanSkipAuthentication ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

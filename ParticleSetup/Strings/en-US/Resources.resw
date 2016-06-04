@@ -119,11 +119,11 @@
   </resheader>
   <data name="PasswordPlaceholder.PlaceholderText" xml:space="preserve">
     <value>password</value>
-    <comment>Used on Page: SoftAP - Password</comment>
+    <comment>Used on Page: SoftAP - Password and Auth - Login, Signup, CreateToken</comment>
   </data>
   <data name="Cancel.Text" xml:space="preserve">
     <value>Cancel</value>
-    <comment>Used on Page: SoftAP - Manual Network</comment>
+    <comment>Used on Page: SoftAP - Manual Network and Auth - ForgotPassword, CreateToken</comment>
   </data>
   <data name="ChangeNetwork.Text" xml:space="preserve">
     <value>Change network</value>
@@ -273,10 +273,6 @@
     <value>SIGN UP</value>
     <comment>Used on Page: Auth - Signup</comment>
   </data>
-  <data name="Cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-    <comment>Used on Page: Auth - ForgotPassword, CreateToken</comment>
-  </data>
   <data name="CreateParticleAccount.Text" xml:space="preserve">
     <value>Create {brand} account</value>
     <comment>Used on Page: Auth - Signup</comment>
@@ -325,10 +321,6 @@
     <value>{brand} Login</value>
     <comment>Used on Page: Auth - Login, TokenLogin</comment>
   </data>
-  <data name="PasswordPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>password</value>
-    <comment>Used on Page: Auth - Login, Signup, CreateToken</comment>
-  </data>
   <data name="RequestPasswordReset.Text" xml:space="preserve">
     <value>Request password reset</value>
     <comment>Used on Page: Auth - ForgotPassword</comment>
@@ -360,5 +352,9 @@
   <data name="VerifyPasswordPlaceholder.PlaceholderText" xml:space="preserve">
     <value>verify password</value>
     <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="SkipAuthentication.Text" xml:space="preserve">
+    <value>Skip authentication</value>
+    <comment>Used on Page: Auth - Login, Signup</comment>
   </data>
 </root>

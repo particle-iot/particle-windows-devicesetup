@@ -47,6 +47,11 @@ namespace Particle.Setup
         public Type CompletionPageType { get; set; }
 
         /// <summary>
+        /// Allow the user to skip authentication
+        /// </summary>
+        public bool CanSkipAuthentication { get; set; }
+
+        /// <summary>
         /// A HashSet of current device names to check against when assigning a name
         /// </summary>
         public HashSet<string> CurrentDeviceNames { get; set; }
