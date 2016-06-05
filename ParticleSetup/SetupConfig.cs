@@ -148,6 +148,25 @@ namespace Particle.Setup
 
         #endregion
 
+        #region Public Organization Members
+
+        /// <summary>
+        /// enable organizational mode
+        /// </summary>
+        public bool IsOrganization { get; set; } = false;
+
+        /// <summary>
+        /// organizational name for API endpoint URL - must specify for orgMode
+        /// </summary>
+        public string OrganizationSlug { get; set; } = null;
+
+        /// <summary>
+        /// product string for API endpoint URL - must specify for orgMode
+        /// </summary>
+        public string ProductSlug { get; set; } = null;
+
+        #endregion
+
         #region Internal Methods
 
         /// <summary>

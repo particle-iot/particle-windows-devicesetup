@@ -45,7 +45,10 @@ namespace Particle.Setup.Pages.SoftAP
 
                 ProgressBar.IsIndeterminate = true;
 
-                SoftAPConfig.SoftAPData.ClaimCode = await ParticleCloud.SharedCloud.CreateClaimCodeAsync();
+                if (ParticleSetup.CurrentSetupSettings.IsOrganization)
+                    SoftAPConfig.SoftAPData.ClaimCode = await ParticleCloud.SharedCloud.CreateClaimCodeForOrganizationAsync(ParticleSetup.CurrentSetupSettings.OrganizationSlug, ParticleSetup.CurrentSetupSettings.ProductSlug);
+                else
+                    SoftAPConfig.SoftAPData.ClaimCode = await ParticleCloud.SharedCloud.CreateClaimCodeAsync();
 
                 ProgressBar.IsIndeterminate = false;
             }

@@ -103,7 +103,11 @@ namespace Particle.Setup.Pages.Auth
 
             SetEnableState(false);
 
-            var success = await ParticleCloud.SharedCloud.SignupAsync(email, password);
+            bool success;
+            if (ParticleSetup.CurrentSetupSettings.IsOrganization)
+                success = await ParticleCloud.SharedCloud.SignupWithCustomerAsync(ParticleSetup.CurrentSetupSettings.OrganizationSlug, email, password);
+            else
+                success = await ParticleCloud.SharedCloud.SignupAsync(email, password);
 
             if (success)
             {
