@@ -2,7 +2,7 @@
 
 # Particle Device Setup library *(Alpha)*
 
-[![license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/spark/particle-windows-devicesetup/blob/master/LICENSE)
+[![license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/particle-iot/particle-windows-devicesetup/blob/master/LICENSE)
 [![NuGet Version](http://img.shields.io/nuget/v/Particle.Setup.svg?style=flat)](https://www.nuget.org/packages/Particle.Setup/)
 
 ## Introduction
@@ -15,7 +15,7 @@ With the Device Setup library, you make one simple call from your app, for examp
 
 ## Alpha notice
 
-This Library is still under development and is currently released as Alpha and over the next few months may go under considerable changes. Although tested, bugs and issues may be present. Some code might require cleanup. In addition, until version 1.0 is released, we cannot guarantee that API calls will not break from one version to the next. Be sure to consult the [Change Log](https://github.com/spark/particle-windows-devicesetup/blob/master/CHANGELOG.md) for any breaking changes / additions to the library.
+This Library is still under development and is currently released as Alpha and over the next few months may go under considerable changes. Although tested, bugs and issues may be present. Some code might require cleanup. In addition, until version 1.0 is released, we cannot guarantee that API calls will not break from one version to the next. Be sure to consult the [Change Log](https://github.com/particle-iot/particle-windows-devicesetup/blob/master/CHANGELOG.md) for any breaking changes / additions to the library.
 
 ## Getting started
 
@@ -93,7 +93,7 @@ Possible result values:
 
 ## Internally used direct soft AP commands
 
-The Device Setup library currently also has the internally used class: [`SoftAPConfig`](https://github.com/spark/particle-windows-devicesetup/blob/master/SoftAPConfig.cs) which is an object that enables all basic soft AP commands.
+The Device Setup library currently also has the internally used class: [`SoftAPConfig`](https://github.com/particle-iot/particle-windows-devicesetup/blob/master/SoftAPConfig.cs) which is an object that enables all basic soft AP commands.
 
 ### Get device ID
 
@@ -153,7 +153,7 @@ var result = await SoftAPConfig.SetConnectAPAsync(index);
 - Any edition of Microsoft Visual Studio 2015 (Other build systems may also work, but are not officially supported.)
 - You can use either C# or VB
 
-You can either [download Particle Device Setup library](https://github.com/spark/particle-windows-devicesetup/archive/master.zip) or install using [NuGet](http://www.nuget.org/packages/Particle.Setup)
+You can either [download Particle Device Setup library](https://github.com/particle-iot/particle-windows-devicesetup/archive/master.zip) or install using [NuGet](http://www.nuget.org/packages/Particle.Setup)
 
 `PM> Install-Package Particle.Setup`
 
@@ -161,8 +161,8 @@ You can either [download Particle Device Setup library](https://github.com/spark
 
 - If you **need help**, use [Our community website](http://community.particle.io), use the `Mobile` category for discussion/troubleshooting Windows apps using the Particle Windows Cloud SDK.
 
-- If you are certain you **found a bug**, _and can provide steps to reliably reproduce it_, [open an issue on GitHub](https://github.com/spark/particle-windows-devicesetup/labels/bug).
-- If you **have a feature request**, [open an issue on GitHub](https://github.com/spark/particle-windows-devicesetup/labels/enhancement).
+- If you are certain you **found a bug**, _and can provide steps to reliably reproduce it_, [open an issue on GitHub](https://github.com/particle-iot/particle-windows-devicesetup/labels/bug).
+- If you **have a feature request**, [open an issue on GitHub](https://github.com/particle-iot/particle-windows-devicesetup/labels/enhancement).
 - If you **want to contribute**, submit a pull request, be sure to check out spark.github.io for our contribution guidelines, and please sign the [CLA](https://docs.google.com/a/particle.io/forms/d/1_2P-vRKGUFg5bmpcKLHO_qNZWGi5HKYnfrrkd-sbZoA/viewform).
 
 ## Maintainers
@@ -172,4 +172,4 @@ You can either [download Particle Device Setup library](https://github.com/spark
 
 ## License
 
-Particle Device Setup library is available under the Apache License 2.0. See the [LICENSE file](https://github.com/spark/particle-windows-devicesetup/blob/master/LICENSE) for more info.
+Particle Device Setup library is available under the Apache License 2.0. See the [LICENSE file](https://github.com/particle-iot/particle-windows-devicesetup/blob/master/LICENSE) for more info.
